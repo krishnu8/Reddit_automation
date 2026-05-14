@@ -1,0 +1,1 @@
+# AI modules — Ollama integration
