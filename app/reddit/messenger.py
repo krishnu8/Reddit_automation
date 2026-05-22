@@ -1,9 +1,12 @@
 """
 Reddit Messenger.
 
-Handles sending replies, DMs, and follow-up messages through
+Handles sending replies, chat messages, and follow-ups through
 the browser with human-like behaviour, rate limiting, and
 outreach logging.
+
+Note: Reddit deprecated PMs in favour of Chat. All "DM" functions
+now send via Reddit Chat.
 """
 
 from __future__ import annotations
@@ -93,8 +96,9 @@ async def reply_to_lead(lead: dict[str, Any]) -> bool:
 
 async def dm_lead(lead: dict[str, Any], message: Optional[str] = None) -> bool:
     """
-    Send a DM to a lead's author.
+    Send a Chat message to a lead's author.
 
+    Uses Reddit Chat (PMs are deprecated).
     Returns True on success.
     """
     if not await humanizer.can_send_dm():
@@ -189,7 +193,7 @@ async def send_followup(
     username: str,
     message: str,
 ) -> bool:
-    """Send a follow-up DM to a user."""
+    """Send a follow-up chat message to a user."""
     if not await humanizer.can_send_dm():
         return False
 

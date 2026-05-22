@@ -41,6 +41,10 @@ async def search_global_keyword(
 
         for post in posts:
             try:
+                # Skip if we already checked this post in previous runs
+                if await db.post_exists(post.get("url", "")):
+                    continue
+
                 # Navigate to the post to read the full body
                 await reddit_browser.goto_post(post["url"])
                 await humanizer.short_delay("reading post")
@@ -101,6 +105,10 @@ async def search_subreddit_feed(
 
         for post in posts:
             try:
+                # Skip if we already checked this post in previous runs
+                if await db.post_exists(post.get("url", "")):
+                    continue
+
                 await reddit_browser.goto_post(post["url"])
                 await humanizer.short_delay("reading post")
 

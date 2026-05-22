@@ -12,3 +12,5 @@ build/
 .vscode/
 .idea/
 .DS_Store
+scratch.py
+debug_output.txt

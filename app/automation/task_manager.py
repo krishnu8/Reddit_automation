@@ -189,8 +189,25 @@ class TaskManager:
                                     )
 
                 except Exception as exc:
+                    err_str = str(exc).lower()
                     self.add_log("ERR", f"Main loop error: {exc}")
                     logger.error("Main loop error: {}", exc)
+                    
+                    if "target closed" in err_str or "browser has been closed" in err_str or "playwright" in err_str:
+                        self.add_log("WARN", "🔄 Browser crashed. Attempting recovery...")
+                        logger.warning("Browser crashed. Attempting recovery...")
+                        from app.reddit.reddit_browser import reddit_browser
+                        try:
+                            await reddit_browser.close()
+                        except:
+                            pass
+                        try:
+                            await reddit_browser.launch()
+                            self.add_log("INFO", "✅ Browser recovered successfully.")
+                            logger.info("Browser recovered successfully.")
+                        except Exception as relaunch_exc:
+                            self.add_log("ERR", f"Recovery failed: {relaunch_exc}")
+                            logger.error("Recovery failed: {}", relaunch_exc)
 
             # Wait before next scan cycle
             wait_minutes = scan_cfg.scan_interval_minutes

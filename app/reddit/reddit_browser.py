@@ -191,7 +191,8 @@ class RedditBrowser:
         await self.goto(post_url)
 
     async def goto_inbox(self) -> None:
-        await self.goto("https://www.reddit.com/message/inbox/")
+        """Navigate to Reddit Chat (replaces deprecated /message/inbox/)."""
+        await self.goto("https://chat.reddit.com/")
 
     async def goto_chat(self) -> None:
         await self.goto("https://chat.reddit.com/")
@@ -363,53 +364,131 @@ class RedditBrowser:
                 return False
 
     async def send_dm(self, username: str, subject: str, message: str) -> bool:
-        """Send a message to a Reddit user via modern Reddit Chat."""
+        """
+        Send a Chat message to a Reddit user.
+
+        Reddit deprecated PMs — all messaging now goes through Reddit Chat.
+        Strategy: Navigate to user profile → click Chat → type → send.
+        Falls back to chat.reddit.com direct URL if profile button fails.
+        """
         try:
-            # Navigate directly to the user's chat channel
-            url = f"https://chat.reddit.com/user/{username}"
-            await self.goto(url)
+            # === Strategy 1: User profile → Chat button ===
+            profile_url = f"https://www.reddit.com/user/{username}"
+            await self.goto(profile_url)
 
             async with self._nav_lock:
-                await asyncio.sleep(4)  # Wait for chat UI to load
+                await asyncio.sleep(3)
 
-                # Combine subject and message for chat
-                full_message = f"**{subject}**\n\n{message}" if subject else message
-
-                # Look for the chat input box
-                chat_input_selectors = [
-                    "div[contenteditable='true'][role='textbox']",
-                    "textarea[placeholder*='Message']",
-                    "shreddit-composer div[contenteditable='true']",
-                    "[data-testid='chat-input']",
-                    "div[aria-label*='Message']",
-                    "#chat-input"
+                # Look for the Chat / Message button on user profile
+                chat_btn_selectors = [
+                    "button:has-text('Chat')",
+                    "button:has-text('Send a message')",
+                    "button:has-text('Message')",
+                    "a:has-text('Chat')",
+                    "[aria-label*='chat' i]",
+                    "[aria-label*='message' i]",
+                    "button[id*='chat']",
+                    "a[href*='chat.reddit.com']",
                 ]
 
-                body_input = None
-                for sel in chat_input_selectors:
-                    body_input = await self.page.query_selector(sel)
-                    if body_input:
-                        break
+                chat_opened = False
+                for sel in chat_btn_selectors:
+                    try:
+                        btn = await self.page.wait_for_selector(
+                            sel, state="visible", timeout=2500
+                        )
+                        if btn:
+                            await btn.click()
+                            chat_opened = True
+                            logger.debug("Chat opened via profile button ({})", sel)
+                            break
+                    except Exception:
+                        continue
 
-                if not body_input:
-                    logger.warning("Could not find chat input box for u/{}", username)
+                if not chat_opened:
+                    logger.debug(
+                        "No chat button on u/{} profile — trying direct URL", username
+                    )
+
+            # === Strategy 2: Direct chat URL fallback ===
+            if not chat_opened:
+                direct_chat_url = f"https://chat.reddit.com/user/{username}"
+                await self.goto(direct_chat_url)
+
+            # === Type and send the message ===
+            async with self._nav_lock:
+                await asyncio.sleep(4)  # Wait for chat UI to fully load
+
+                # Locate the chat message input (textbox role / aria-label)
+                input_selectors = [
+                    "[role='textbox']",
+                    "textarea[aria-label*='essage' i]",
+                    "div[contenteditable='true'][aria-label*='essage' i]",
+                    "div[contenteditable='true']",
+                    "textarea[placeholder*='essage' i]",
+                    "textarea",
+                ]
+
+                chat_input = None
+                for sel in input_selectors:
+                    try:
+                        chat_input = await self.page.wait_for_selector(
+                            sel, state="visible", timeout=3000
+                        )
+                        if chat_input:
+                            break
+                    except Exception:
+                        continue
+
+                if not chat_input:
+                    logger.warning(
+                        "Could not find chat input for u/{} (URL: {})",
+                        username, self.page.url,
+                    )
                     return False
 
-                # Click and type the message with human-like timing
-                await body_input.click()
-                await asyncio.sleep(1)
+                # Click the input and type with human-like timing
+                await chat_input.click()
+                await asyncio.sleep(0.5)
+
+                # Prepend subject as context (chat has no subject field)
+                full_message = message
+                if subject and subject.lower() not in ("hey!", "hello", "following up"):
+                    full_message = f"{subject}\n\n{message}"
+
+                # Use pressSequentially to trigger React event listeners
                 await humanizer.simulate_typing(self.page, full_message)
                 await asyncio.sleep(1)
 
-                # Send it
-                send_btn = await self.page.query_selector(
-                    "button[aria-label='Send'], [data-testid='send-button'], button:has-text('Send')"
-                )
-                if send_btn:
-                    await send_btn.click()
-                else:
-                    await self.page.keyboard.press("Enter")
+                # Find and click the Send button
+                send_selectors = [
+                    "button[aria-label*='end' i]",
+                    "button:has-text('Send')",
+                    "button[type='submit']",
+                    "[data-testid='send-button']",
+                    "button svg[viewBox]",  # Icon-only send buttons
+                ]
 
+                send_btn = None
+                for sel in send_selectors:
+                    try:
+                        send_btn = await self.page.wait_for_selector(
+                            sel, state="visible", timeout=2000
+                        )
+                        if send_btn:
+                            break
+                    except Exception:
+                        continue
+
+                if not send_btn:
+                    # Last resort: press Enter to send
+                    logger.debug("No send button found — pressing Enter")
+                    await self.page.keyboard.press("Enter")
+                    await asyncio.sleep(2)
+                    logger.info("Chat sent to u/{} via Enter key ✅", username)
+                    return True
+
+                await send_btn.click()
                 logger.info("Chat message sent to u/{} ✅", username)
                 await asyncio.sleep(3)
                 return True
@@ -419,50 +498,102 @@ class RedditBrowser:
             return False
 
     async def check_inbox(self) -> list[dict[str, str]]:
-        """Check the modern Reddit Chat for new/unread messages."""
+        """
+        Check Reddit Chat for new/unread messages.
+
+        Reddit deprecated /message/inbox/ — all messages are in Chat now.
+        Navigates to chat.reddit.com and looks for unread indicators.
+        """
         try:
             await self.goto("https://chat.reddit.com/")
             async with self._nav_lock:
-                await asyncio.sleep(4)
+                await asyncio.sleep(5)
                 messages: list[dict[str, str]] = []
 
-                # Look for unread channels in the chat sidebar
-                unread_channels = await self.page.query_selector_all(
-                    "div[data-testid='channel-list-item']:has(div[data-testid='unread-badge'])"
-                )
+                # Look for chat threads with unread indicators
+                thread_selectors = [
+                    # Unread badge / dot on conversation list items
+                    "[class*='unread']",
+                    "[data-testid*='chat-thread'][class*='unread']",
+                    "li:has([class*='unread'])",
+                    "div[role='listitem']:has([class*='badge'])",
+                    "div[role='listitem']:has([class*='unread'])",
+                ]
 
-                for channel in unread_channels[:5]:
+                unread_threads = []
+                for sel in thread_selectors:
                     try:
-                        # Click the unread channel to open it
-                        await channel.click()
-                        await asyncio.sleep(2)
-
-                        # Get the username of the person
-                        header_el = await self.page.query_selector(
-                            "h1, [data-testid='chat-header-title']"
-                        )
-                        author = (await header_el.inner_text()).strip() if header_el else ""
-                        author = author.replace("u/", "")
-
-                        # Get the latest message bubble received
-                        msg_els = await self.page.query_selector_all(
-                            "[data-testid='message-bubble']"
-                        )
-                        if msg_els:
-                            latest_msg = msg_els[-1]
-                            body = (await latest_msg.inner_text()).strip()
-
-                            if author and body:
-                                messages.append({
-                                    "author": author,
-                                    "subject": "Chat Reply",
-                                    "body": body,
-                                })
-                    except Exception as exc:
-                        logger.debug("Error reading unread chat channel: {}", exc)
+                        unread_threads = await self.page.query_selector_all(sel)
+                        if unread_threads:
+                            break
+                    except Exception:
                         continue
 
-            logger.info("Found {} unread chat messages", len(messages))
+                if not unread_threads:
+                    # Fallback: grab all visible conversation items
+                    try:
+                        unread_threads = await self.page.query_selector_all(
+                            "div[role='listitem'], li[class*='thread'], "
+                            "[data-testid*='conversation']"
+                        )
+                    except Exception:
+                        pass
+
+                for thread_el in unread_threads[:5]:
+                    try:
+                        # Click into the thread to read messages
+                        await thread_el.click()
+                        await asyncio.sleep(2)
+
+                        # Extract the username from the chat header
+                        header_selectors = [
+                            "h1", "h2", "h3",
+                            "[class*='header'] span",
+                            "[data-testid*='chat-header']",
+                            "a[href*='/user/']",
+                        ]
+                        author = ""
+                        for hsel in header_selectors:
+                            try:
+                                h_el = await self.page.query_selector(hsel)
+                                if h_el:
+                                    text = (await h_el.inner_text()).strip()
+                                    if text and len(text) < 50:
+                                        author = text.replace("u/", "")
+                                        break
+                            except Exception:
+                                continue
+
+                        # Get the last message in the conversation
+                        msg_selectors = [
+                            "[class*='message']:last-child",
+                            "[data-testid*='message']:last-child",
+                            "div[class*='chat-message']:last-of-type",
+                            "p:last-of-type",
+                        ]
+                        body = ""
+                        for msel in msg_selectors:
+                            try:
+                                msg_els = await self.page.query_selector_all(msel)
+                                if msg_els:
+                                    body = (await msg_els[-1].inner_text()).strip()
+                                    if body:
+                                        break
+                            except Exception:
+                                continue
+
+                        if author and body:
+                            messages.append({
+                                "author": author,
+                                "subject": "Chat",
+                                "body": body,
+                            })
+
+                    except Exception as exc:
+                        logger.debug("Error reading chat thread: {}", exc)
+                        continue
+
+            logger.info("Found {} chat messages", len(messages))
             return messages
         except Exception as exc:
             logger.error("Failed to check chat inbox: {}", exc)

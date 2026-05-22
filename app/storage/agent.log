@@ -155,3 +155,1223 @@
 2026-05-14 22:29:07 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
 2026-05-14 22:29:08 | INFO     | __main__:run_agent:129 - Shutting down…
 2026-05-14 22:29:08 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 19:12:29 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 19:12:29 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 19:12:29 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 19:12:29 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 19:12:29 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 19:12:29 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 19:12:29 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 19:12:29 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 19:12:42 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 19:12:42 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 19:12:42 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 19:12:43 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 19:12:43 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 19:12:43 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 19:12:53 | INFO     | app.reddit.reddit_browser:is_logged_in:493 - Reddit session is logged in ✅
+2026-05-18 19:12:53 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 19:12:53 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 19:12:53 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 19:12:53 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 19:12:53 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 19:12:53 | INFO     | app.reddit.lead_scraper:quick_scan:205 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 19:12:53 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+help+scaling&sort=new&t=week&type=link
+2026-05-18 19:13:05 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.1s before loading global search results
+2026-05-18 19:13:11 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 19:13:11 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need help scaling'
+2026-05-18 19:13:11 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before between searches
+2026-05-18 19:13:13 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=can+someone+help+me&sort=new&t=week&type=link
+2026-05-18 19:13:23 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.2s before loading global search results
+2026-05-18 19:13:30 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 19:13:30 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'can someone help me'
+2026-05-18 19:13:30 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before between searches
+2026-05-18 19:13:33 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+website&sort=new&t=week&type=link
+2026-05-18 19:13:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.7s before loading global search results
+2026-05-18 19:13:48 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 19:13:48 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need website'
+2026-05-18 19:13:48 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.4s before between searches
+2026-05-18 19:13:54 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/SaaS/new/
+2026-05-18 19:14:03 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.7s before loading subreddit
+2026-05-18 19:14:12 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 1 post listings
+2026-05-18 19:14:12 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:100 - Found 1 posts in r/SaaS
+2026-05-18 19:14:12 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/SaaS/comments/1tgn0ju/being_an_earlystage_founder_has_been_way_harder/
+2026-05-18 19:14:18 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.6s before reading post
+2026-05-18 19:14:49 | DEBUG    | app.database:insert_lead:221 - Inserted lead: PhysicalDare9851 — Being an early-stage founder has been way harder (and loneli
+2026-05-18 19:14:49 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.3s before between subreddit scans
+2026-05-18 19:14:54 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/digitalnomad/new/
+2026-05-18 19:15:05 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.9s before loading subreddit
+2026-05-18 19:15:13 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 1 post listings
+2026-05-18 19:15:13 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:100 - Found 1 posts in r/digitalnomad
+2026-05-18 19:15:13 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/digitalnomad/comments/1tgn2kf/how_would_you_work_to_earn_1500_a_month/
+2026-05-18 19:15:19 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.7s before reading post
+2026-05-18 19:15:29 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Not-so-nisaac — How would you work to earn $1500 a month?
+2026-05-18 19:15:29 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.9s before between subreddit scans
+2026-05-18 19:15:34 | INFO     | app.reddit.lead_scraper:quick_scan:226 - Quick scan complete: 2 leads
+2026-05-18 19:15:34 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-18 19:15:34 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 5 new leads…
+2026-05-18 19:15:46 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 1/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:15:57 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 2/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:09 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 3/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:09 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #7: Ollama request failed after 3 attempts: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:18 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 1/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:29 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 2/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:42 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 3/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:42 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #6: Ollama request failed after 3 attempts: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:16:50 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 1/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:17:00 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 2/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:17:13 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 3/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:17:13 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #4: Ollama request failed after 3 attempts: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:17:22 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 1/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:17:42 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 2/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:03 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 3/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:03 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #2: Ollama request failed after 3 attempts: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:21 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 1/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:35 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 2/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:51 | WARNING  | app.ai.ollama_client:_post:73 - Ollama request attempt 3/3 failed: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:51 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #1: Ollama request failed after 3 attempts: 500, message='Internal Server Error', url='http://localhost:11434/api/generate'
+2026-05-18 19:18:51 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 19:18:51 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 19:18:51 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 19:19:00 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 19:20:00 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 19:20:00 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 19:20:07 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-18 19:20:08 | INFO     | __main__:run_agent:129 - Shutting down…
+2026-05-18 19:20:08 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 19:38:18 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 19:38:18 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 19:38:18 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 19:38:18 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 19:38:18 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 19:38:18 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 19:38:18 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 19:38:18 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 19:38:19 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 19:38:19 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 19:38:19 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 19:38:20 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 19:38:20 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 19:38:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 19:38:31 | INFO     | app.reddit.reddit_browser:is_logged_in:493 - Reddit session is logged in ✅
+2026-05-18 19:38:31 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 19:38:31 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 19:38:31 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 19:38:31 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 19:38:31 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 19:38:31 | INFO     | app.reddit.lead_scraper:quick_scan:205 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 19:38:31 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=bad+conversion+rate&sort=new&t=week&type=link
+2026-05-18 19:38:40 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.6s before loading global search results
+2026-05-18 19:38:47 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 19:38:47 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'bad conversion rate'
+2026-05-18 19:38:48 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.3s before between searches
+2026-05-18 19:38:55 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=how+much+does+website+cost&sort=new&t=week&type=link
+2026-05-18 19:39:06 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.7s before loading global search results
+2026-05-18 19:39:17 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 19:39:17 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'how much does website cost'
+2026-05-18 19:39:17 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.9s before between searches
+2026-05-18 19:39:25 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+redesign&sort=new&t=week&type=link
+2026-05-18 19:39:34 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before loading global search results
+2026-05-18 19:39:40 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 19:39:40 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need redesign'
+2026-05-18 19:39:40 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.3s before between searches
+2026-05-18 19:39:44 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/business/new/
+2026-05-18 19:39:59 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.7s before loading subreddit
+2026-05-18 19:40:07 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 19:40:07 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:100 - Found 2 posts in r/business
+2026-05-18 19:40:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/business/comments/1tgn4b4/nextera_energy_strikes_668_billion_deal_for/
+2026-05-18 19:40:12 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.2s before reading post
+2026-05-18 19:40:21 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Sash17 — NextEra Energy strikes $66.8 billion deal for Dominion in be
+2026-05-18 19:40:21 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/business/comments/1tgn4b4/nextera_energy_strikes_668_billion_deal_for/
+2026-05-18 19:40:26 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.2s before reading post
+2026-05-18 19:40:37 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.3s before between subreddit scans
+2026-05-18 19:40:43 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/smallbusiness/new/
+2026-05-18 19:40:53 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.6s before loading subreddit
+2026-05-18 19:41:01 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 19:41:01 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:100 - Found 2 posts in r/smallbusiness
+2026-05-18 19:41:01 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/smallbusiness/comments/1tgns3v/a_lot_of_small_businesses_spend_heavily_trying_to/
+2026-05-18 19:41:05 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.7s before reading post
+2026-05-18 19:41:14 | DEBUG    | app.database:insert_lead:221 - Inserted lead: ajeetbuilds-19 — A lot of small businesses spend heavily trying to get attent
+2026-05-18 19:41:14 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/smallbusiness/comments/1tgns3v/a_lot_of_small_businesses_spend_heavily_trying_to/
+2026-05-18 19:41:22 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.2s before reading post
+2026-05-18 19:41:34 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.5s before between subreddit scans
+2026-05-18 19:41:40 | INFO     | app.reddit.lead_scraper:quick_scan:226 - Quick scan complete: 2 leads
+2026-05-18 19:41:40 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-18 19:41:40 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 6 new leads…
+2026-05-18 19:41:50 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 19:42:01 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 19:42:13 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 19:42:13 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #10: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 19:42:22 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 19:43:18 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 2] → 912 chars
+2026-05-18 19:43:18 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #8 — quality=60, action=skip, emotion=neutral
+2026-05-18 19:44:07 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1121 chars
+2026-05-18 19:44:07 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #6 — quality=0, action=skip, emotion=neutral
+2026-05-18 19:44:49 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1019 chars
+2026-05-18 19:44:49 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #4 — quality=60, action=skip, emotion=neutral
+2026-05-18 19:45:47 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1118 chars
+2026-05-18 19:45:47 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #2 — quality=70, action=dm, emotion=neutral
+2026-05-18 19:46:00 | INFO     | app.automation.task_manager:auto_send:65 - Auto-send mode: OFF
+2026-05-18 19:46:40 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1082 chars
+2026-05-18 19:46:40 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #1 — quality=0, action=skip, emotion=neutral
+2026-05-18 19:46:40 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 19:46:40 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 19:46:40 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 19:46:52 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 19:47:52 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 19:47:52 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 19:48:03 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 19:49:03 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 19:49:03 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 21:25:22 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 21:25:22 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 21:25:22 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 21:25:22 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 21:25:22 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 21:25:22 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 21:25:22 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 21:25:22 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 21:25:23 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 21:25:23 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 21:25:23 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 21:25:24 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 21:25:24 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 21:25:24 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 21:25:34 | INFO     | app.reddit.reddit_browser:is_logged_in:493 - Reddit session is logged in ✅
+2026-05-18 21:25:34 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 21:25:34 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 21:25:34 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 21:25:34 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 21:25:34 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 21:25:34 | INFO     | app.reddit.lead_scraper:quick_scan:205 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 21:25:34 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=website+development&sort=new&t=week&type=link
+2026-05-18 21:25:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.2s before loading global search results
+2026-05-18 21:25:51 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 21:25:51 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'website development'
+2026-05-18 21:25:51 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.9s before between searches
+2026-05-18 21:25:55 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+recommendation&sort=new&t=week&type=link
+2026-05-18 21:26:07 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.3s before loading global search results
+2026-05-18 21:26:15 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 21:26:15 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need recommendation'
+2026-05-18 21:26:15 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.6s before between searches
+2026-05-18 21:26:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+redesign&sort=new&t=week&type=link
+2026-05-18 21:26:29 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.7s before loading global search results
+2026-05-18 21:26:37 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 21:26:37 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need redesign'
+2026-05-18 21:26:37 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.6s before between searches
+2026-05-18 21:26:42 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/SaaS/new/
+2026-05-18 21:26:51 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.5s before loading subreddit
+2026-05-18 21:26:57 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 1 post listings
+2026-05-18 21:26:57 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:100 - Found 1 posts in r/SaaS
+2026-05-18 21:26:57 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/SaaS/comments/1tgqmks/my_productivity_app_just_hit_60_people_on_the/
+2026-05-18 21:27:03 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.4s before reading post
+2026-05-18 21:27:32 | DEBUG    | app.database:insert_lead:221 - Inserted lead: gordiony — My productivity app just hit 60 people on the waitlist.. im 
+2026-05-18 21:27:32 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.3s before between subreddit scans
+2026-05-18 21:27:38 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/agency/new/
+2026-05-18 21:27:46 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.9s before loading subreddit
+2026-05-18 21:27:52 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 21:27:52 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:100 - Found 2 posts in r/agency
+2026-05-18 21:27:52 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/agency/comments/1tdm7zd/warning_buttons_are_turning_to_see_details/
+2026-05-18 21:27:59 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.2s before reading post
+2026-05-18 21:28:07 | DEBUG    | app.database:insert_lead:221 - Inserted lead: throwawaybpdnpd — [WARNING] Buttons are turning to "See Details" automatically
+2026-05-18 21:28:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/agency/comments/1tdm7zd/warning_buttons_are_turning_to_see_details/
+2026-05-18 21:28:14 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.1s before reading post
+2026-05-18 21:28:22 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.4s before between subreddit scans
+2026-05-18 21:28:29 | INFO     | app.reddit.lead_scraper:quick_scan:226 - Quick scan complete: 2 leads
+2026-05-18 21:28:29 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-18 21:28:29 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 3 new leads…
+2026-05-18 21:28:40 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 21:28:52 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 21:29:06 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 21:29:06 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #13: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 21:29:18 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 21:30:38 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 2] → 1126 chars
+2026-05-18 21:30:38 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #12 — quality=0, action=skip, emotion=neutral
+2026-05-18 21:31:35 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1183 chars
+2026-05-18 21:31:35 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #10 — quality=0, action=skip, emotion=neutral
+2026-05-18 21:31:35 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 21:31:35 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 21:31:35 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 21:31:48 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 21:32:48 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 21:32:48 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 21:32:58 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 21:33:58 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 21:33:58 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 21:34:11 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 21:35:11 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 21:35:11 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 21:35:23 | INFO     | app.reddit.reddit_browser:check_inbox:465 - Found 0 unread chat messages
+2026-05-18 21:35:37 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-18 21:35:38 | INFO     | __main__:run_agent:129 - Shutting down…
+2026-05-18 21:35:38 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 21:55:39 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 21:55:39 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 21:55:39 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 21:55:39 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 21:55:39 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 21:55:39 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 21:55:40 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 21:55:40 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 21:55:40 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 21:55:40 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 21:55:40 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 21:55:41 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 21:55:41 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 21:55:41 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 21:55:49 | INFO     | app.reddit.reddit_browser:is_logged_in:494 - Reddit session is logged in ✅
+2026-05-18 21:55:49 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 21:55:49 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 21:55:49 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 21:55:49 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 21:55:49 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 21:55:49 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 21:55:49 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=startup+needs+developer&sort=new&t=week&type=link
+2026-05-18 21:56:08 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.6s before loading global search results
+2026-05-18 21:56:17 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 21:56:17 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'startup needs developer'
+2026-05-18 21:56:17 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.8s before between searches
+2026-05-18 21:56:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=dashboard+problem&sort=new&t=week&type=link
+2026-05-18 21:56:27 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.1s before loading global search results
+2026-05-18 21:56:38 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 21:56:38 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'dashboard problem'
+2026-05-18 21:56:38 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.2s before between searches
+2026-05-18 21:56:45 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=designer&sort=new&t=week&type=link
+2026-05-18 21:56:56 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.4s before loading global search results
+2026-05-18 21:57:04 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 21:57:04 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'designer'
+2026-05-18 21:57:04 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.2s before between searches
+2026-05-18 21:57:12 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/forhire/new/
+2026-05-18 21:57:25 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.6s before loading subreddit
+2026-05-18 21:57:32 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 1 post listings
+2026-05-18 21:57:32 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/forhire
+2026-05-18 21:57:32 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/forhire/comments/1tgqvzf/hiring_usa_residents_quick_remote_task_30_paid/
+2026-05-18 21:57:39 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.9s before reading post
+2026-05-18 21:57:57 | DEBUG    | app.database:insert_lead:221 - Inserted lead: sportspsych — [Hiring] USA Residents – Quick Remote Task ($30 Paid)
+2026-05-18 21:57:57 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.6s before between subreddit scans
+2026-05-18 21:58:01 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/programming/new/
+2026-05-18 21:58:12 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.5s before loading subreddit
+2026-05-18 21:58:19 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 21:58:19 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/programming
+2026-05-18 21:58:19 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/programming/comments/1tgr4bx/simulating_infinity_in_conways_game_of_life_with/
+2026-05-18 21:58:26 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.5s before reading post
+2026-05-18 21:58:36 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Ok_Statistician_781 — Simulating Infinity in Conway's Game of Life with Modern C++
+2026-05-18 21:58:36 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.5s before between subreddit scans
+2026-05-18 21:58:39 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-18 21:58:39 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-18 21:58:39 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 3 new leads…
+2026-05-18 21:59:56 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1088 chars
+2026-05-18 21:59:56 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #16 — quality=0, action=skip, emotion=neutral
+2026-05-18 22:00:38 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 795 chars
+2026-05-18 22:00:38 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #15 — quality=10, action=skip, emotion=neutral
+2026-05-18 22:01:32 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 998 chars
+2026-05-18 22:01:32 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #13 — quality=0, action=skip, emotion=neutral
+2026-05-18 22:01:32 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 22:01:32 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:01:32 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:01:43 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:02:43 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:02:43 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:02:52 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:03:52 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:03:52 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:04:01 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:05:01 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:05:01 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:05:13 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:06:13 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:06:13 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:06:23 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:07:23 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:07:23 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:07:34 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:08:34 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:08:34 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:08:46 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:09:46 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:09:46 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:09:57 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:10:57 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:10:57 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:11:07 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:12:07 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:12:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:12:17 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:13:17 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:13:17 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:13:26 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:14:26 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:14:26 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:14:35 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:15:35 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:15:35 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:15:44 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:16:44 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:16:44 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:16:54 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:17:54 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:17:54 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:18:05 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:19:05 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:19:05 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:19:18 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:20:18 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:20:18 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:20:27 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:21:27 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:21:27 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:21:33 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 78.9s before preparing DM
+2026-05-18 22:21:38 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:22:38 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:22:38 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:22:49 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:22:52 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=pmfka
+2026-05-18 22:23:02 | WARNING  | app.reddit.reddit_browser:send_dm:388 - Could not find subject input for u/pmfka
+2026-05-18 22:23:32 | ERROR    | app.reddit.reddit_browser:send_dm:419 - Failed to send PM to u/pmfka: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2026-05-18 22:23:32 | WARNING  | app.reddit.messenger:dm_lead:151 - ❌ Failed to DM u/pmfka
+2026-05-18 22:23:32 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 13 actions this session, extra 72s pause
+2026-05-18 22:23:49 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:23:49 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:24:00 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:24:45 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 46.1s before between approved DMs
+2026-05-18 22:25:00 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:25:00 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:25:26 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread chat messages
+2026-05-18 22:26:12 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-18 22:26:13 | INFO     | __main__:run_agent:129 - Shutting down…
+2026-05-18 22:26:13 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 22:31:00 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 22:31:00 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 22:31:00 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 22:31:00 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 22:31:00 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 22:31:00 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 22:31:00 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 22:31:00 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 22:31:01 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 22:31:01 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 22:31:01 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 22:31:01 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 22:31:01 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 22:31:01 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 22:31:10 | INFO     | app.reddit.reddit_browser:is_logged_in:484 - Reddit session is logged in ✅
+2026-05-18 22:31:10 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 22:31:10 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 22:31:10 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 22:31:10 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 22:31:10 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 22:31:10 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 22:31:10 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+MVP&sort=new&t=week&type=link
+2026-05-18 22:31:28 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.2s before loading global search results
+2026-05-18 22:31:34 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 22:31:34 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need MVP'
+2026-05-18 22:31:35 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.6s before between searches
+2026-05-18 22:31:39 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=website+too+slow&sort=new&t=week&type=link
+2026-05-18 22:31:49 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.3s before loading global search results
+2026-05-18 22:31:57 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 22:31:57 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'website too slow'
+2026-05-18 22:31:57 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.7s before between searches
+2026-05-18 22:32:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=need+help+with+website&sort=new&t=week&type=link
+2026-05-18 22:32:13 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.1s before loading global search results
+2026-05-18 22:32:21 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 22:32:21 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'need help with website'
+2026-05-18 22:32:21 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.0s before between searches
+2026-05-18 22:32:24 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/webdev/new/
+2026-05-18 22:32:33 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.1s before loading subreddit
+2026-05-18 22:32:40 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 22:32:40 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/webdev
+2026-05-18 22:32:40 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/webdev/comments/1tgruh9/ai_slop_obvious_marketing_web_forums_and_you/
+2026-05-18 22:32:44 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.9s before reading post
+2026-05-18 22:33:16 | DEBUG    | app.database:insert_lead:221 - Inserted lead: frogic — AI Slop, obvious marketing, web forums and you.
+2026-05-18 22:33:16 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.7s before between subreddit scans
+2026-05-18 22:33:19 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/freelance_forhire/new/
+2026-05-18 22:33:31 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before loading subreddit
+2026-05-18 22:33:37 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 1 post listings
+2026-05-18 22:33:37 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/freelance_forhire
+2026-05-18 22:33:37 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/freelance_forhire/comments/1tgsu7s/hiring_offering_125_instantly_for_anyone_in_usa/
+2026-05-18 22:33:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.8s before reading post
+2026-05-18 22:33:55 | DEBUG    | app.database:insert_lead:221 - Inserted lead: trafficlist1976 — [Hiring] Offering $125 instantly for anyone in USA who is on
+2026-05-18 22:33:55 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.2s before between subreddit scans
+2026-05-18 22:33:57 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-18 22:33:57 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-18 22:33:57 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 2 new leads…
+2026-05-18 22:34:08 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:34:19 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:34:31 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:34:31 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #18: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:34:40 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:34:52 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:35:04 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:35:04 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #17: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 22:35:04 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 22:35:04 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:35:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:35:15 | INFO     | app.reddit.reddit_browser:check_inbox:456 - Found 0 unread chat messages
+2026-05-18 22:36:15 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 22:36:15 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-18 22:36:27 | INFO     | app.reddit.reddit_browser:check_inbox:456 - Found 0 unread chat messages
+2026-05-18 22:36:45 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-18 22:36:45 | INFO     | __main__:run_agent:129 - Shutting down…
+2026-05-18 22:36:45 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 22:36:50 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 76.3s before preparing DM
+2026-05-18 22:38:06 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=pmfka&subject=Re%3A%20AI%20made%20software%20engineering%20feel%20less%20rewarding%20t&message=Hey%20pmfka%2C%20I%20understand%20your%20frustration%20with%20AI%20making%20software%20engineering%20feel%20less%20rewarding.%20As%20someone%20who%27s%20experienced%20similar%20feelings%2C%20I%27d%20love%20to%20chat%20about%20how%20we%20can%20adapt%20to%20the%20new%20workflow%20and%20make%20it%20more%20enjoyable.%20Maybe%20there%20are%20some%20creative%20solutions%20or%20approaches%20that%20could%20bring%20back%20the%20%27earned%20it%27%20feeling%20you%20mentioned.
+2026-05-18 22:38:07 | WARNING  | app.reddit.reddit_browser:goto:175 - Navigation retry (Page.goto: 'NoneType' object has no attribute 'send')
+2026-05-18 22:38:10 | ERROR    | app.reddit.reddit_browser:send_dm:409 - Failed to send PM to u/pmfka: Page.goto: 'NoneType' object has no attribute 'send'
+2026-05-18 22:38:10 | WARNING  | app.reddit.messenger:dm_lead:151 - ❌ Failed to DM u/pmfka
+2026-05-18 22:38:10 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 13 actions this session, extra 31s pause
+2026-05-18 22:38:40 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 84.6s before between approved DMs
+2026-05-18 22:39:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 50.0s before preparing DM
+2026-05-18 22:40:31 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=pmfka&subject=Re%3A%20AI%20made%20software%20engineering%20feel%20less%20rewarding%20t&message=Hey%20pmfka%2C%20I%20understand%20your%20frustration%20with%20AI%20making%20software%20engineering%20feel%20less%20rewarding.%20As%20someone%20who%27s%20experienced%20similar%20feelings%2C%20I%27d%20love%20to%20chat%20about%20how%20we%20can%20adapt%20to%20the%20new%20workflow%20and%20make%20it%20more%20enjoyable.%20Maybe%20there%20are%20some%20creative%20solutions%20or%20approaches%20that%20could%20bring%20back%20the%20%27earned%20it%27%20feeling%20you%20mentioned.
+2026-05-18 22:40:31 | WARNING  | app.reddit.reddit_browser:goto:175 - Navigation retry (Page.goto: 'NoneType' object has no attribute 'send')
+2026-05-18 22:40:35 | ERROR    | app.reddit.reddit_browser:send_dm:409 - Failed to send PM to u/pmfka: Page.goto: 'NoneType' object has no attribute 'send'
+2026-05-18 22:40:35 | WARNING  | app.reddit.messenger:dm_lead:151 - ❌ Failed to DM u/pmfka
+2026-05-18 22:40:35 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 15 actions this session, extra 46s pause
+2026-05-18 22:41:21 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 73.3s before between approved DMs
+2026-05-18 22:47:24 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 22:47:24 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 22:47:24 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 22:47:24 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 22:47:24 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 22:47:24 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 22:47:24 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 22:47:24 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 22:47:24 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 22:47:24 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 22:47:24 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 22:47:25 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 22:47:25 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 22:47:25 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 22:47:37 | INFO     | app.reddit.reddit_browser:is_logged_in:494 - Reddit session is logged in ✅
+2026-05-18 22:47:37 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 22:47:37 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 22:47:37 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 22:47:37 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 22:47:37 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 22:47:37 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 22:47:37 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=how+do+I+build&sort=new&t=week&type=link
+2026-05-18 22:47:50 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.9s before loading global search results
+2026-05-18 22:48:01 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 22:48:01 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'how do I build'
+2026-05-18 22:48:01 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.7s before between searches
+2026-05-18 22:48:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=my+business+needs&sort=new&t=week&type=link
+2026-05-18 22:48:16 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.9s before loading global search results
+2026-05-18 22:48:27 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 22:48:27 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'my business needs'
+2026-05-18 22:48:27 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.4s before between searches
+2026-05-18 22:48:33 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=SEO+issue&sort=new&t=week&type=link
+2026-05-18 22:48:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.1s before loading global search results
+2026-05-18 22:48:48 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 22:48:48 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'SEO issue'
+2026-05-18 22:48:48 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.9s before between searches
+2026-05-18 22:48:54 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/web_design/new/
+2026-05-18 22:49:04 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.1s before loading subreddit
+2026-05-18 22:49:09 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 22:49:09 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/web_design
+2026-05-18 22:49:09 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/web_design/comments/1tgkg25/after_building_20_client_projects_over_the_last/
+2026-05-18 22:49:18 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.9s before reading post
+2026-05-18 22:49:53 | DEBUG    | app.database:insert_lead:221 - Inserted lead: BizAlly — After building 20+ client projects over the last few years, 
+2026-05-18 22:49:53 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.6s before between subreddit scans
+2026-05-18 22:49:58 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/seo/new/
+2026-05-18 22:50:10 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.4s before loading subreddit
+2026-05-18 22:50:17 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 1 post listings
+2026-05-18 22:50:17 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/seo
+2026-05-18 22:50:17 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/SEO/comments/1tgr5jz/is_this_seo_behavior_normal/
+2026-05-18 22:50:22 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.5s before reading post
+2026-05-18 22:50:58 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Ok-Heart-6087 — Is this SEO behavior normal?
+2026-05-18 22:50:58 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.7s before between subreddit scans
+2026-05-18 22:51:01 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-18 22:51:01 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-18 22:51:01 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 4 new leads…
+2026-05-18 22:52:39 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1066 chars
+2026-05-18 22:52:39 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #20 — quality=70, action=dm, emotion=confused
+2026-05-18 22:53:49 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1206 chars
+2026-05-18 22:53:49 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #19 — quality=60, action=dm, emotion=neutral
+2026-05-18 22:54:46 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 825 chars
+2026-05-18 22:54:46 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #18 — quality=10, action=skip, emotion=neutral
+2026-05-18 22:56:00 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1236 chars
+2026-05-18 22:56:00 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #17 — quality=0, action=skip, emotion=neutral
+2026-05-18 22:56:00 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 81.2s before preparing DM
+2026-05-18 22:57:21 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Ok-Heart-6087&subject=Re%3A%20Is%20this%20SEO%20behavior%20normal%3F&message=Hey%20Ok-Heart-6087%2C%20I%20see%20you%27re%20trying%20to%20understand%20your%20website%27s%20SEO%20behavior.%20That%27s%20a%20great%20step%21%20I%27d%20love%20to%20help%20you%20dig%20deeper%20into%20the%20data%20and%20identify%20areas%20for%20improvement.%20Can%20we%20chat%20about%20what%20you%27ve%20tried%20so%20far%20and%20what%20you%27re%20hoping%20to%20achieve%3F
+2026-05-18 22:57:35 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/Ok-Heart-6087 ✅
+2026-05-18 22:57:38 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: Ok-Heart-6087
+2026-05-18 22:57:38 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/Ok-Heart-6087
+2026-05-18 22:57:38 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 13 actions this session, extra 102s pause
+2026-05-18 22:59:20 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 75.2s before between DMs
+2026-05-18 23:00:36 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 34.3s before preparing DM
+2026-05-18 23:01:10 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=BizAlly&subject=Re%3A%20After%20building%2020%2B%20client%20projects%20over%20the%20last%20f&message=Hey%20u/BizAlly%2C%20I%20noticed%20you%27re%20reflecting%20on%20the%20importance%20of%20making%20early%20technical%20decisions%20in%20your%20projects.%20As%20someone%20who%27s%20built%20multiple%20client%20projects%2C%20I%27m%20sure%20you%20know%20how%20crucial%20it%20is%20to%20streamline%20processes%20and%20avoid%20headaches%20down%20the%20line.%20If%20you%27re%20looking%20for%20a%20fresh%20perspective%20or%20some%20expert%20guidance%20on%20optimizing%20your%20workflow%2C%20I%27d%20be%20happy%20to%20chat%20more%20about%20how%20we%20can%20help.
+2026-05-18 23:01:20 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/BizAlly ✅
+2026-05-18 23:01:23 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: BizAlly
+2026-05-18 23:01:23 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/BizAlly
+2026-05-18 23:01:23 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 15 actions this session, extra 59s pause
+2026-05-18 23:02:23 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 24.7s before between DMs
+2026-05-18 23:02:47 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 23:02:47 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:02:47 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:02:58 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:03:58 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:03:58 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:04:06 | INFO     | app.database:reinstate_lead:300 - Reinstated lead #20 back to analyzed
+2026-05-18 23:04:08 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:04:09 | WARNING  | app.reddit.messenger:dm_lead:119 - DM too similar to recent messages — regenerating
+2026-05-18 23:04:24 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 23:04:38 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-18 23:04:39 | INFO     | __main__:run_agent:129 - Shutting down…
+2026-05-18 23:04:39 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 23:05:11 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-18 23:05:11 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-18 23:05:11 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-18 23:05:11 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-18 23:05:11 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-18 23:05:11 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-18 23:05:12 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-18 23:05:12 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-18 23:05:12 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-18 23:05:12 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-18 23:05:12 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-18 23:05:15 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-18 23:05:15 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-18 23:05:15 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-18 23:05:28 | INFO     | app.reddit.reddit_browser:is_logged_in:494 - Reddit session is logged in ✅
+2026-05-18 23:05:28 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-18 23:05:28 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-18 23:05:28 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-18 23:05:28 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-18 23:05:28 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-18 23:05:28 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-18 23:05:28 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=automation&sort=new&t=week&type=link
+2026-05-18 23:05:41 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.4s before loading global search results
+2026-05-18 23:05:50 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 23:05:50 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'automation'
+2026-05-18 23:05:50 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.3s before between searches
+2026-05-18 23:05:53 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=how+much+for+a+website&sort=new&t=week&type=link
+2026-05-18 23:06:09 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.7s before loading global search results
+2026-05-18 23:06:15 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 23:06:15 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'how much for a website'
+2026-05-18 23:06:15 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.9s before between searches
+2026-05-18 23:06:23 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=hiring&sort=new&t=week&type=link
+2026-05-18 23:06:31 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.2s before loading global search results
+2026-05-18 23:06:41 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 0 post listings
+2026-05-18 23:06:41 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'hiring'
+2026-05-18 23:06:41 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.5s before between searches
+2026-05-18 23:06:48 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/programming/new/
+2026-05-18 23:07:06 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before loading subreddit
+2026-05-18 23:07:12 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 23:07:12 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/programming
+2026-05-18 23:07:12 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/programming/comments/1tgterl/on_mashing_up_modelling_techniques_for_fun_and/
+2026-05-18 23:07:15 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 65.5s before preparing DM
+2026-05-18 23:07:21 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.2s before reading post
+2026-05-18 23:07:30 | INFO     | app.automation.task_manager:auto_send:65 - Auto-send mode: OFF
+2026-05-18 23:07:32 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Adventurous-Salt8514 — On mashing up modelling techniques for fun and profit
+2026-05-18 23:07:32 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before between subreddit scans
+2026-05-18 23:07:33 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 60.1s before preparing DM
+2026-05-18 23:07:34 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/web_design/new/
+2026-05-18 23:07:46 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 64.8s before preparing DM
+2026-05-18 23:07:47 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.2s before loading subreddit
+2026-05-18 23:07:51 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 30.8s before preparing DM
+2026-05-18 23:07:53 | INFO     | app.reddit.reddit_browser:get_post_listings:282 - Extracted 2 post listings
+2026-05-18 23:07:53 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/web_design
+2026-05-18 23:07:53 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before between subreddit scans
+2026-05-18 23:07:55 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 1 leads
+2026-05-18 23:07:55 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 1 leads
+2026-05-18 23:07:55 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 1 new leads…
+2026-05-18 23:07:56 | INFO     | app.automation.task_manager:auto_send:65 - Auto-send mode: ON
+2026-05-18 23:08:01 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 71.3s before preparing DM
+2026-05-18 23:08:21 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Ok-Heart-6087&subject=Re%3A%20Is%20this%20SEO%20behavior%20normal%3F&message=Hey%20Ok-Heart-6087%2C%20I%20see%20you%27re%20trying%20to%20understand%20your%20website%27s%20SEO%20behavior.%20That%27s%20a%20great%20step%21%20I%27d%20love%20to%20help%20you%20dig%20deeper%20into%20the%20data%20and%20identify%20areas%20for%20improvement.%20Can%20we%20chat%20about%20what%20you%27ve%20tried%20so%20far%20and%20what%20you%27re%20hoping%20to%20achieve%3F
+2026-05-18 23:08:32 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Ok-Heart-6087&subject=Re%3A%20Is%20this%20SEO%20behavior%20normal%3F&message=Hey%20Ok-Heart-6087%2C%20I%20see%20you%27re%20trying%20to%20understand%20your%20website%27s%20SEO%20behavior.%20That%27s%20a%20great%20step%21%20I%27d%20love%20to%20help%20you%20dig%20deeper%20into%20the%20data%20and%20identify%20areas%20for%20improvement.%20Can%20we%20chat%20about%20what%20you%27ve%20tried%20so%20far%20and%20what%20you%27re%20hoping%20to%20achieve%3F
+2026-05-18 23:08:44 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/Ok-Heart-6087 ✅
+2026-05-18 23:08:47 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Ok-Heart-6087&subject=Re%3A%20Is%20this%20SEO%20behavior%20normal%3F&message=Hey%20Ok-Heart-6087%2C%20I%20see%20you%27re%20trying%20to%20understand%20your%20website%27s%20SEO%20behavior.%20That%27s%20a%20great%20step%21%20I%27d%20love%20to%20help%20you%20dig%20deeper%20into%20the%20data%20and%20identify%20areas%20for%20improvement.%20Can%20we%20chat%20about%20what%20you%27ve%20tried%20so%20far%20and%20what%20you%27re%20hoping%20to%20achieve%3F
+2026-05-18 23:08:47 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/Ok-Heart-6087
+2026-05-18 23:08:47 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 14 actions this session, extra 65s pause
+2026-05-18 23:09:00 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/Ok-Heart-6087 ✅
+2026-05-18 23:09:03 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Ok-Heart-6087&subject=Re%3A%20Is%20this%20SEO%20behavior%20normal%3F&message=Hey%20Ok-Heart-6087%2C%20I%20see%20you%27re%20trying%20to%20understand%20your%20website%27s%20SEO%20behavior.%20That%27s%20a%20great%20step%21%20I%27d%20love%20to%20help%20you%20dig%20deeper%20into%20the%20data%20and%20identify%20areas%20for%20improvement.%20Can%20we%20chat%20about%20what%20you%27ve%20tried%20so%20far%20and%20what%20you%27re%20hoping%20to%20achieve%3F
+2026-05-18 23:09:03 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/Ok-Heart-6087
+2026-05-18 23:09:03 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 15 actions this session, extra 66s pause
+2026-05-18 23:09:09 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1154 chars
+2026-05-18 23:09:09 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #21 — quality=0, action=skip, emotion=neutral
+2026-05-18 23:09:09 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-18 23:09:09 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:09:09 | ERROR    | app.reddit.reddit_browser:check_inbox:469 - Failed to check inbox: <asyncio.locks.Lock object at 0x00000175B5FCECD0 [locked, waiters:1]> is bound to a different event loop
+2026-05-18 23:09:15 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/Ok-Heart-6087 ✅
+2026-05-18 23:09:18 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/Ok-Heart-6087
+2026-05-18 23:09:18 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 16 actions this session, extra 94s pause
+2026-05-18 23:09:52 | ERROR    | app.reddit.reddit_browser:send_dm:409 - Failed to send PM to u/Ok-Heart-6087: ElementHandle.click: Timeout 30000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    55 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+2026-05-18 23:09:52 | WARNING  | app.reddit.messenger:dm_lead:151 - ❌ Failed to DM u/Ok-Heart-6087
+2026-05-18 23:09:52 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=pmfka&subject=Re%3A%20AI%20made%20software%20engineering%20feel%20less%20rewarding%20t&message=Hey%20pmfka%2C%20I%20understand%20your%20frustration%20with%20AI%20making%20software%20engineering%20feel%20less%20rewarding.%20As%20someone%20who%27s%20experienced%20similar%20feelings%2C%20I%27d%20love%20to%20chat%20about%20how%20we%20can%20adapt%20to%20the%20new%20workflow%20and%20make%20it%20more%20enjoyable.%20Maybe%20there%20are%20some%20creative%20solutions%20or%20approaches%20that%20could%20bring%20back%20the%20%27earned%20it%27%20feeling%20you%20mentioned.
+2026-05-18 23:09:52 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 16 actions this session, extra 92s pause
+2026-05-18 23:10:03 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/pmfka ✅
+2026-05-18 23:10:06 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: pmfka
+2026-05-18 23:10:06 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/pmfka
+2026-05-18 23:10:06 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 16 actions this session, extra 106s pause
+2026-05-18 23:10:09 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:10:09 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:10:20 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:11:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:11:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:11:31 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:11:52 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 55.5s before between approved DMs
+2026-05-18 23:12:31 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:12:31 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:12:41 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:12:48 | WARNING  | app.reddit.messenger:dm_lead:119 - DM too similar to recent messages — regenerating
+2026-05-18 23:13:20 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 529 chars
+2026-05-18 23:13:20 | INFO     | app.ai.conversation_agent:generate_initial_reply:192 - Generated initial reply for u/Ok-Heart-6087
+2026-05-18 23:13:20 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 43.4s before preparing DM
+2026-05-18 23:13:41 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:13:41 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:13:50 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:14:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Ok-Heart-6087&subject=Re%3A%20Is%20this%20SEO%20behavior%20normal%3F&message=Hi%20Ok-Heart-6087%21%20I%27m%20happy%20to%20help%20you%20out%20with%20your%20SEO%20concerns.%20It%27s%20completely%20normal%20for%20search%20console%20data%20to%20vary%20between%20countries%2C%20but%20it%27s%20great%20that%20you%27re%20keeping%20a%20close%20eye%20on%20yours%21%20Can%20you%20tell%20me%20more%20about%20your%20website%20and%20the%20kind%20of%20content%20you%27ve%20been%20publishing%3F%20Have%20you%20considered%20conducting%20an%20SEO%20audit%20or%20working%20with%20someone%20who%20can%20help%20you%20optimize%20your%20site%20for%20Indian%20audiences%3F%0A%0A%28No%20mention%20of%20pricing%20or%20negotiations%20at%20this%20stage%2C%20just%20focusing%20on%20being%20helpful%20and%20addressing%20their%20concerns%29
+2026-05-18 23:14:15 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/Ok-Heart-6087 ✅
+2026-05-18 23:14:18 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/Ok-Heart-6087
+2026-05-18 23:14:18 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 18 actions this session, extra 68s pause
+2026-05-18 23:14:50 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:14:50 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:14:58 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:15:26 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 42.8s before between approved DMs
+2026-05-18 23:15:58 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:15:58 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:16:08 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:17:08 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:17:08 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:17:19 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:18:19 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:18:19 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:18:29 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:19:29 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:19:29 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:19:39 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:19:43 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: Adventurous-Salt8514
+2026-05-18 23:19:53 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 23:20:06 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 23:20:21 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-18 23:20:29 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 30.2s before preparing DM
+2026-05-18 23:20:39 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:20:39 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:20:49 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:20:59 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/compose/?to=Turbulent_Type2067&subject=Re%3A%20Help%21%21%20Drawer%20or%20modal&message=Hey%20Turbulent_Type2067%2C%20I%20see%20you%27re%20stuck%20deciding%20between%20a%20drawer%20or%20modal%20in%20your%20CMMS.%20I%27m%20all%20about%20creating%20intuitive%20UI%20experiences%20that%20enhance%20user%20engagement.%20Would%20love%20to%20help%20you%20weigh%20the%20pros%20and%20cons%20of%20each%20option%20and%20find%20the%20best%20fit%20for%20your%20SAAS.
+2026-05-18 23:21:09 | INFO     | app.reddit.reddit_browser:send_dm:400 - Private message sent to u/Turbulent_Type2067 ✅
+2026-05-18 23:21:12 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: Turbulent_Type2067
+2026-05-18 23:21:12 | INFO     | app.reddit.messenger:dm_lead:149 - ✅ DM sent to u/Turbulent_Type2067
+2026-05-18 23:21:12 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 20 actions this session, extra 65s pause
+2026-05-18 23:21:49 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:21:49 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:21:59 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:22:59 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-18 23:22:59 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/message/inbox/
+2026-05-18 23:23:08 | INFO     | app.reddit.reddit_browser:check_inbox:466 - Found 0 unread inbox messages
+2026-05-18 23:23:44 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-18 23:23:45 | INFO     | __main__:run_agent:129 - Shutting down…
+2026-05-18 23:23:45 | INFO     | app.automation.task_manager:stop:110 - Agent stopped
+2026-05-18 23:32:42 | INFO     | __main__:_signal_handler:42 - Received signal 2 — shutting down…
+2026-05-21 18:31:43 | INFO     | app.utils.logger:setup_logger:53 - Logger initialised — level=DEBUG, file=C:\Users\krish\Downloads\Reddit-again\app\storage\agent.log
+2026-05-21 18:31:43 | INFO     | __main__:run_agent:62 - ============================================================
+2026-05-21 18:31:43 | INFO     | __main__:run_agent:63 -   Reddit AI Lead Generation Agent
+2026-05-21 18:31:43 | INFO     | __main__:run_agent:64 - ============================================================
+2026-05-21 18:31:43 | INFO     | app.database:connect:184 - Database connected at C:\Users\krish\Downloads\Reddit-again\app\storage\app.db
+2026-05-21 18:31:43 | INFO     | __main__:run_agent:68 - Database ready
+2026-05-21 18:31:44 | INFO     | __main__:run_agent:73 - ✅ Ollama is reachable
+2026-05-21 18:31:44 | INFO     | __main__:run_agent:80 - 🌐 Dashboard at http://127.0.0.1:8080
+2026-05-21 18:31:58 | INFO     | app.reddit.reddit_browser:launch:77 - Copying Chrome profile 'Profile 11' to AgentProfile to avoid locks...
+2026-05-21 18:31:58 | INFO     | app.reddit.reddit_browser:launch:104 - Profile copied successfully.
+2026-05-21 18:31:58 | INFO     | app.reddit.reddit_browser:launch:110 - Launching Chrome from AgentProfile…
+2026-05-21 18:32:00 | INFO     | app.reddit.reddit_browser:launch:127 - Chrome launched with persistent profile ✅
+2026-05-21 18:32:00 | INFO     | app.reddit.reddit_browser:launch:148 - Browser ready
+2026-05-21 18:32:00 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/
+2026-05-21 18:32:11 | INFO     | app.reddit.reddit_browser:is_logged_in:624 - Reddit session is logged in ✅
+2026-05-21 18:32:11 | INFO     | __main__:run_agent:114 - ✅ Reddit session is logged in
+2026-05-21 18:32:11 | DEBUG    | app.automation.humanizer:reset_session:245 - Humanizer session counters reset
+2026-05-21 18:32:11 | INFO     | app.automation.task_manager:start:100 - 🤖 Autonomous agent started — 3 tasks
+2026-05-21 18:32:11 | INFO     | __main__:run_agent:120 - 🚀 Agent running! Press Ctrl+C to stop.
+2026-05-21 18:32:12 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-21 18:32:12 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-21 18:32:12 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=startup+needs+developer&sort=new&t=week&type=link
+2026-05-21 18:32:26 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.8s before loading global search results
+2026-05-21 18:32:32 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 18:32:32 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'startup needs developer'
+2026-05-21 18:32:32 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.7s before between searches
+2026-05-21 18:32:38 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=how+do+I+build&sort=new&t=week&type=link
+2026-05-21 18:32:46 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.2s before loading global search results
+2026-05-21 18:32:51 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 18:32:51 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'how do I build'
+2026-05-21 18:32:51 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.6s before between searches
+2026-05-21 18:32:57 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=hourly+paid+dev&sort=new&t=week&type=link
+2026-05-21 18:33:09 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.9s before loading global search results
+2026-05-21 18:33:19 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 18:33:19 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'hourly paid dev'
+2026-05-21 18:33:19 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.5s before between searches
+2026-05-21 18:33:27 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/shopify/new/
+2026-05-21 18:33:39 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.7s before loading subreddit
+2026-05-21 18:33:50 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 2 post listings
+2026-05-21 18:33:50 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/shopify
+2026-05-21 18:33:50 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/shopify/comments/1tjhc0w/shopify_store_app/
+2026-05-21 18:33:56 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.1s before reading post
+2026-05-21 18:34:07 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Fragrant_Pilot4439 — shopify store app
+2026-05-21 18:34:07 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.4s before between subreddit scans
+2026-05-21 18:34:14 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/UI_Design/new/
+2026-05-21 18:34:21 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.8s before loading subreddit
+2026-05-21 18:34:28 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 2 post listings
+2026-05-21 18:34:28 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/UI_Design
+2026-05-21 18:34:28 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/UI_Design/comments/1tjb0ot/i_built_skywatchfuture_a_scifi_tactical_weather/
+2026-05-21 18:34:34 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.7s before reading post
+2026-05-21 18:35:07 | DEBUG    | app.database:insert_lead:221 - Inserted lead: JRAltd — I built SKYWATCH.FUTURE – A sci-fi, tactical weather dashboa
+2026-05-21 18:35:07 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.5s before between subreddit scans
+2026-05-21 18:35:14 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-21 18:35:14 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-21 18:35:14 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 2 new leads…
+2026-05-21 18:35:39 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:35:58 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:36:23 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:36:23 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #23: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:36:34 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:36:46 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:37:00 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:37:00 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #22: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 18:37:00 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-21 18:37:00 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:37:00 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:37:11 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:38:11 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:38:11 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:38:22 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:39:22 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:39:22 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:39:34 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:40:34 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:40:34 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:40:44 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:41:44 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:41:44 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:41:54 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:42:54 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:42:54 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:43:04 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:44:04 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:44:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:44:13 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:45:13 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:45:13 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:45:25 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:46:25 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:46:25 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:46:36 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:47:36 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:47:36 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:47:46 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:48:46 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:48:46 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:48:57 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:49:57 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:49:57 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:50:07 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:51:07 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:51:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:51:18 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:52:18 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:52:18 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:52:27 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:53:27 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:53:27 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:53:39 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:54:39 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:54:39 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:54:49 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:55:49 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:55:49 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:56:02 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:57:02 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:57:02 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:57:15 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:58:15 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:58:15 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:58:27 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 18:59:27 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 18:59:27 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 18:59:37 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:00:37 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:00:37 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:00:47 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:01:47 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:01:47 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:01:57 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:02:04 | INFO     | app.automation.task_manager:auto_send:65 - Auto-send mode: OFF
+2026-05-21 19:02:07 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-21 19:02:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=workflow+problem&sort=new&t=week&type=link
+2026-05-21 19:02:20 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.2s before loading global search results
+2026-05-21 19:02:25 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:02:32 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:02:32 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'workflow problem'
+2026-05-21 19:02:32 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.9s before between searches
+2026-05-21 19:02:40 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=freelance+developer&sort=new&t=week&type=link
+2026-05-21 19:02:44 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:02:56 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.2s before loading global search results
+2026-05-21 19:02:57 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:02:57 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:03:10 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:03:11 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [unlocked, waiters:1]> is bound to a different event loop
+2026-05-21 19:03:14 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:03:14 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'freelance developer'
+2026-05-21 19:03:14 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.2s before between searches
+2026-05-21 19:03:16 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=ecommerce+slow&sort=new&t=week&type=link
+2026-05-21 19:03:30 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.3s before loading global search results
+2026-05-21 19:03:39 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:03:39 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'ecommerce slow'
+2026-05-21 19:03:39 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.6s before between searches
+2026-05-21 19:03:45 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/Entrepreneur/new/
+2026-05-21 19:03:57 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.8s before loading subreddit
+2026-05-21 19:04:11 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 1 post listings
+2026-05-21 19:04:11 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/Entrepreneur
+2026-05-21 19:04:11 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/Entrepreneur/comments/1tjfxmq/what_do_you_currently_spend_per_month_on_tools/
+2026-05-21 19:04:11 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:04:11 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked]> is bound to a different event loop
+2026-05-21 19:04:21 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.4s before reading post
+2026-05-21 19:04:33 | DEBUG    | app.database:insert_lead:221 - Inserted lead: Chance_Ad_3015 — What do you currently spend per month on tools for ad creati
+2026-05-21 19:04:33 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.1s before between subreddit scans
+2026-05-21 19:04:35 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/startups/new/
+2026-05-21 19:04:49 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.4s before loading subreddit
+2026-05-21 19:05:02 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 1 post listings
+2026-05-21 19:05:02 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/startups
+2026-05-21 19:05:02 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/startups/comments/1tji9jt/i_will_not_promote_5_ai_mvp_lessons_from_helping/
+2026-05-21 19:05:08 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.5s before reading post
+2026-05-21 19:05:11 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:05:11 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:05:17 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [unlocked, waiters:1]> is bound to a different event loop
+2026-05-21 19:05:23 | DEBUG    | app.database:insert_lead:221 - Inserted lead: SwordfishSpecial9673 — I will not promote - 5 AI MVP lessons from helping businesse
+2026-05-21 19:05:23 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.3s before between subreddit scans
+2026-05-21 19:05:29 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-21 19:06:17 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:06:17 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:06:28 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:07:00 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-21 19:07:00 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-21 19:07:00 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=slow+website&sort=new&t=week&type=link
+2026-05-21 19:07:13 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.0s before loading global search results
+2026-05-21 19:07:23 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:07:23 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'slow website'
+2026-05-21 19:07:23 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.1s before between searches
+2026-05-21 19:07:26 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=admin+panel+issue&sort=new&t=week&type=link
+2026-05-21 19:07:34 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.0s before loading global search results
+2026-05-21 19:07:42 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:07:42 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'admin panel issue'
+2026-05-21 19:07:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.4s before between searches
+2026-05-21 19:07:47 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=automation&sort=new&t=week&type=link
+2026-05-21 19:07:54 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.0s before loading global search results
+2026-05-21 19:08:03 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:08:03 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'automation'
+2026-05-21 19:08:03 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.6s before between searches
+2026-05-21 19:08:09 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/wordpress/new/
+2026-05-21 19:08:22 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 3.4s before loading subreddit
+2026-05-21 19:08:29 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 2 post listings
+2026-05-21 19:08:29 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/wordpress
+2026-05-21 19:08:29 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/Wordpress/comments/1tjkern/images_have_frame_after_update_wordpress_70/
+2026-05-21 19:08:37 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.8s before reading post
+2026-05-21 19:08:50 | DEBUG    | app.database:insert_lead:221 - Inserted lead: FDH02 — Images have frame after update Wordpress 7.0.
+2026-05-21 19:08:50 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.0s before between subreddit scans
+2026-05-21 19:08:56 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/seo/new/
+2026-05-21 19:09:09 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.0s before loading subreddit
+2026-05-21 19:09:17 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 1 post listings
+2026-05-21 19:09:17 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/seo
+2026-05-21 19:09:17 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/SEO/comments/1tjkcn9/not_to_beat_a_dead_horse_but_whats_the_future_of/
+2026-05-21 19:09:24 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.7s before reading post
+2026-05-21 19:10:02 | DEBUG    | app.database:insert_lead:221 - Inserted lead: jroberts67 — Not to beat a dead horse, but what's the future of Google se
+2026-05-21 19:10:02 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.7s before between subreddit scans
+2026-05-21 19:10:06 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-21 19:10:06 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-21 19:10:06 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 6 new leads…
+2026-05-21 19:10:18 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:10:30 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:10:43 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:10:43 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #27: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:10:53 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:05 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:18 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:18 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #26: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:28 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:39 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:52 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:11:52 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #25: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:12:01 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:12:13 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:13:26 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 3] → 1260 chars
+2026-05-21 19:13:26 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #24 — quality=0, action=skip, emotion=neutral
+2026-05-21 19:14:16 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1027 chars
+2026-05-21 19:14:16 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #23 — quality=70, action=dm, emotion=excited
+2026-05-21 19:15:04 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 1136 chars
+2026-05-21 19:15:04 | INFO     | app.ai.ai_analyzer:analyze_lead:86 - Analyzed lead #22 — quality=0, action=skip, emotion=neutral
+2026-05-21 19:15:04 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-21 19:15:04 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:15:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:15:15 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:16:15 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:16:15 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:16:26 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:17:27 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:17:27 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:17:37 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:18:37 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:18:37 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:18:46 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:19:46 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:19:46 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:19:57 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:20:34 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 55.2s before preparing DM
+2026-05-21 19:20:41 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: Chance_Ad_3015
+2026-05-21 19:20:43 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 46.2s before preparing DM
+2026-05-21 19:20:44 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: Fragrant_Pilot4439
+2026-05-21 19:20:52 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:20:57 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:20:57 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:21:03 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:21:10 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:21:12 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:21:21 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:21:29 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/Sash17
+2026-05-21 19:21:30 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:21:35 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/JRAltd
+2026-05-21 19:21:45 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:21:48 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:22:10 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:22:10 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked, waiters:1]> is bound to a different event loop
+2026-05-21 19:22:11 | WARNING  | app.reddit.reddit_browser:send_dm:444 - Could not find chat input for u/Sash17 (URL: https://www.reddit.com/user/JRAltd/)
+2026-05-21 19:22:11 | WARNING  | app.reddit.messenger:dm_lead:155 - ❌ Failed to DM u/Sash17
+2026-05-21 19:22:11 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 38 actions this session, extra 107s pause
+2026-05-21 19:22:11 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 2] → 742 chars
+2026-05-21 19:22:11 | INFO     | app.ai.conversation_agent:generate_initial_reply:192 - Generated initial reply for u/Adventurous-Salt8514
+2026-05-21 19:22:11 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 78.4s before preparing DM
+2026-05-21 19:22:33 | WARNING  | app.reddit.reddit_browser:send_dm:444 - Could not find chat input for u/JRAltd (URL: https://www.reddit.com/user/JRAltd/)
+2026-05-21 19:22:33 | WARNING  | app.reddit.messenger:dm_lead:155 - ❌ Failed to DM u/JRAltd
+2026-05-21 19:22:33 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 38 actions this session, extra 90s pause
+2026-05-21 19:22:38 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 3] → 781 chars
+2026-05-21 19:22:38 | INFO     | app.ai.conversation_agent:generate_initial_reply:192 - Generated initial reply for u/Chance_Ad_3015
+2026-05-21 19:22:38 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 40.7s before preparing DM
+2026-05-21 19:22:58 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 3] → 523 chars
+2026-05-21 19:22:58 | INFO     | app.ai.conversation_agent:generate_initial_reply:192 - Generated initial reply for u/Fragrant_Pilot4439
+2026-05-21 19:22:58 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 42.8s before preparing DM
+2026-05-21 19:23:10 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:23:10 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:23:20 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:23:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/Chance_Ad_3015
+2026-05-21 19:23:32 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:23:32 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/Adventurous-Salt8514
+2026-05-21 19:23:58 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 34.1s before between approved DMs
+2026-05-21 19:24:02 | WARNING  | app.reddit.reddit_browser:send_dm:444 - Could not find chat input for u/Chance_Ad_3015 (URL: https://www.reddit.com/user/Adventurous-Salt8514/)
+2026-05-21 19:24:02 | WARNING  | app.reddit.messenger:dm_lead:155 - ❌ Failed to DM u/Chance_Ad_3015
+2026-05-21 19:24:02 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 41 actions this session, extra 77s pause
+2026-05-21 19:24:05 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:24:05 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/Fragrant_Pilot4439
+2026-05-21 19:24:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:24:20 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked, waiters:1]> is bound to a different event loop
+2026-05-21 19:24:32 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 54.8s before preparing DM
+2026-05-21 19:24:36 | WARNING  | app.reddit.reddit_browser:send_dm:444 - Could not find chat input for u/Adventurous-Salt8514 (URL: https://www.reddit.com/user/Fragrant_Pilot4439/)
+2026-05-21 19:24:36 | WARNING  | app.reddit.messenger:dm_lead:155 - ❌ Failed to DM u/Adventurous-Salt8514
+2026-05-21 19:24:36 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 42 actions this session, extra 73s pause
+2026-05-21 19:24:39 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:25:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:25:20 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked]> is bound to a different event loop
+2026-05-21 19:26:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:26:20 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked, waiters:1]> is bound to a different event loop
+2026-05-21 19:26:31 | DEBUG    | app.automation.humanizer:simulate_typing:165 - Typed 546 chars with humanized timing
+2026-05-21 19:26:33 | INFO     | app.reddit.reddit_browser:send_dm:492 - Chat message sent to u/Fragrant_Pilot4439 ✅
+2026-05-21 19:26:36 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/sportspsych
+2026-05-21 19:26:36 | INFO     | app.reddit.messenger:dm_lead:153 - ✅ DM sent to u/Fragrant_Pilot4439
+2026-05-21 19:26:36 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 43 actions this session, extra 40s pause
+2026-05-21 19:26:46 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:27:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:27:20 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked]> is bound to a different event loop
+2026-05-21 19:27:39 | DEBUG    | app.automation.humanizer:simulate_typing:165 - Typed 258 chars with humanized timing
+2026-05-21 19:27:41 | INFO     | app.reddit.reddit_browser:send_dm:492 - Chat message sent to u/sportspsych ✅
+2026-05-21 19:27:44 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: sportspsych
+2026-05-21 19:27:44 | INFO     | app.reddit.messenger:dm_lead:153 - ✅ DM sent to u/sportspsych
+2026-05-21 19:27:44 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 43 actions this session, extra 85s pause
+2026-05-21 19:28:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:28:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:28:32 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:29:09 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 65.3s before between approved DMs
+2026-05-21 19:29:32 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:29:32 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:29:45 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:30:14 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 76.6s before preparing DM
+2026-05-21 19:30:45 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:30:45 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:30:56 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:31:31 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/trafficlist1976
+2026-05-21 19:31:40 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:31:56 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:31:56 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked]> is bound to a different event loop
+2026-05-21 19:32:41 | DEBUG    | app.automation.humanizer:simulate_typing:165 - Typed 288 chars with humanized timing
+2026-05-21 19:32:43 | INFO     | app.reddit.reddit_browser:send_dm:492 - Chat message sent to u/trafficlist1976 ✅
+2026-05-21 19:32:46 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: trafficlist1976
+2026-05-21 19:32:46 | INFO     | app.reddit.messenger:dm_lead:153 - ✅ DM sent to u/trafficlist1976
+2026-05-21 19:32:46 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 45 actions this session, extra 91s pause
+2026-05-21 19:32:56 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:32:56 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:33:08 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:34:08 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:34:08 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:34:16 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 26.1s before between approved DMs
+2026-05-21 19:34:20 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:34:53 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:35:05 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:35:18 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:35:20 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:35:20 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:35:30 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:36:30 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:36:30 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:36:31 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 56.4s before preparing DM
+2026-05-21 19:36:40 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:37:08 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 664 chars
+2026-05-21 19:37:08 | INFO     | app.ai.conversation_agent:generate_initial_reply:192 - Generated initial reply for u/Chance_Ad_3015
+2026-05-21 19:37:08 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 54.0s before preparing DM
+2026-05-21 19:37:28 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/JRAltd
+2026-05-21 19:37:39 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:37:40 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:37:40 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked]> is bound to a different event loop
+2026-05-21 19:38:40 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:38:40 | ERROR    | app.reddit.reddit_browser:check_inbox:599 - Failed to check chat inbox: <asyncio.locks.Lock object at 0x0000025B1380ED90 [locked, waiters:1]> is bound to a different event loop
+2026-05-21 19:39:03 | DEBUG    | app.automation.humanizer:simulate_typing:165 - Typed 358 chars with humanized timing
+2026-05-21 19:39:04 | INFO     | app.reddit.reddit_browser:send_dm:492 - Chat message sent to u/JRAltd ✅
+2026-05-21 19:39:07 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/user/Chance_Ad_3015
+2026-05-21 19:39:07 | INFO     | app.database:get_or_create_conversation:381 - Created conversation for user: JRAltd
+2026-05-21 19:39:07 | INFO     | app.reddit.messenger:dm_lead:153 - ✅ DM sent to u/JRAltd
+2026-05-21 19:39:07 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 48 actions this session, extra 86s pause
+2026-05-21 19:39:17 | DEBUG    | app.reddit.reddit_browser:send_dm:403 - Chat opened via profile button (button:has-text('Chat'))
+2026-05-21 19:39:40 | WARNING  | app.reddit.reddit_browser:send_dm:444 - Could not find chat input for u/Chance_Ad_3015 (URL: https://www.reddit.com/user/Chance_Ad_3015/)
+2026-05-21 19:39:40 | WARNING  | app.reddit.messenger:dm_lead:155 - ❌ Failed to DM u/Chance_Ad_3015
+2026-05-21 19:39:40 | INFO     | app.automation.humanizer:enforce_cooldown:199 - Cooldown: 48 actions this session, extra 84s pause
+2026-05-21 19:39:40 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:39:40 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:39:51 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:40:51 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:40:51 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:41:02 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:42:02 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:42:02 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:42:12 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:43:12 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:43:12 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:43:22 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:44:22 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:44:22 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:44:33 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:45:04 | INFO     | app.automation.task_manager:_main_loop:142 - 🔍 Searching Reddit for leads…
+2026-05-21 19:45:04 | INFO     | app.reddit.lead_scraper:quick_scan:213 - Quick scan: 3 keywords, 2 subreddits
+2026-05-21 19:45:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=hourly+paid+dev&sort=new&t=week&type=link
+2026-05-21 19:45:13 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.4s before loading global search results
+2026-05-21 19:45:21 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:45:21 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'hourly paid dev'
+2026-05-21 19:45:21 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.5s before between searches
+2026-05-21 19:45:26 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=hiring&sort=new&t=week&type=link
+2026-05-21 19:45:42 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 7.0s before loading global search results
+2026-05-21 19:45:52 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:45:52 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'hiring'
+2026-05-21 19:45:52 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.6s before between searches
+2026-05-21 19:45:55 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/search/?q=looking+for+someone+to+build&sort=new&t=week&type=link
+2026-05-21 19:46:06 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.6s before loading global search results
+2026-05-21 19:46:16 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 0 post listings
+2026-05-21 19:46:16 | INFO     | app.reddit.lead_scraper:search_global_keyword:40 - Found 0 results globally for 'looking for someone to build'
+2026-05-21 19:46:16 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.6s before between searches
+2026-05-21 19:46:22 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/business/new/
+2026-05-21 19:46:38 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 6.2s before loading subreddit
+2026-05-21 19:46:47 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 2 post listings
+2026-05-21 19:46:47 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 2 posts in r/business
+2026-05-21 19:46:47 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/business/comments/1tjl1iz/ai_data_center_borrowing_rapidly_climbs_wall/
+2026-05-21 19:46:52 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.9s before reading post
+2026-05-21 19:46:58 | DEBUG    | app.database:insert_lead:221 - Inserted lead: ninjascotsman — AI Data Center Borrowing Rapidly Climbs Wall Street’s Risk L
+2026-05-21 19:46:58 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 2.9s before between subreddit scans
+2026-05-21 19:47:01 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/forhire/new/
+2026-05-21 19:47:12 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 5.9s before loading subreddit
+2026-05-21 19:47:21 | INFO     | app.reddit.reddit_browser:get_post_listings:283 - Extracted 1 post listings
+2026-05-21 19:47:21 | INFO     | app.reddit.lead_scraper:search_subreddit_feed:104 - Found 1 posts in r/forhire
+2026-05-21 19:47:21 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://www.reddit.com/r/forhire/comments/1tjln6l/for_hire_from_concept_to_conversion_your_goto/
+2026-05-21 19:47:28 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 4.4s before reading post
+2026-05-21 19:48:04 | DEBUG    | app.database:insert_lead:221 - Inserted lead: steveychevey — [FOR HIRE] From Concept to Conversion - Your Go-To Shopify E
+2026-05-21 19:48:04 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 8.0s before between subreddit scans
+2026-05-21 19:48:12 | INFO     | app.reddit.lead_scraper:quick_scan:234 - Quick scan complete: 2 leads
+2026-05-21 19:48:12 | INFO     | app.automation.task_manager:_main_loop:145 - 🔍 Found 2 leads
+2026-05-21 19:48:12 | INFO     | app.automation.task_manager:_main_loop:151 - 🧠 Analyzing 5 new leads…
+2026-05-21 19:48:22 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:48:33 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:48:46 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:48:46 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #29: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:48:55 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:05 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:17 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:18 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #28: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:26 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:36 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:49 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:49 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #27: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:49:57 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:08 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:21 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:21 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #26: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:29 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 1/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process no longer running: 1 CUDA error"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:40 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 2/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:52 | WARNING  | app.ai.ollama_client:_post:84 - Ollama request attempt 3/3 failed: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:52 | ERROR    | app.ai.ai_analyzer:analyze_batch:104 - Error analyzing lead #25: Ollama request failed after 3 attempts: 500, message='Ollama returned 500: {"error":"llama runner process has terminated: %!w(\\u003cnil\\u003e)"}', url='http://localhost:11434/api/generate'
+2026-05-21 19:50:52 | INFO     | app.automation.task_manager:_main_loop:215 - 💤 Sleeping 30 minutes before next scan…
+2026-05-21 19:50:52 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:50:52 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:51:04 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:52:04 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:52:04 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:52:15 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:53:15 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:53:15 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:53:26 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:54:26 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:54:26 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:54:39 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:55:39 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:55:39 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:55:49 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:56:49 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:56:49 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:57:00 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:58:00 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:58:00 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:58:12 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 19:59:12 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 19:59:12 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 19:59:23 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 20:00:23 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 20:00:23 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 20:00:36 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 20:01:36 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 20:01:36 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 20:01:47 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages
+2026-05-21 20:02:47 | INFO     | app.automation.task_manager:_inbox_loop:232 - 📬 Checking inbox for replies…
+2026-05-21 20:02:47 | DEBUG    | app.reddit.reddit_browser:goto:171 - → https://chat.reddit.com/
+2026-05-21 20:02:56 | DEBUG    | app.ai.ollama_client:_post:75 - Ollama [llama3 | attempt 1] → 929 chars
+2026-05-21 20:02:56 | INFO     | app.ai.conversation_agent:generate_initial_reply:192 - Generated initial reply for u/Chance_Ad_3015
+2026-05-21 20:02:56 | DEBUG    | app.automation.humanizer:random_delay:43 - Humanizer: waiting 61.9s before preparing DM
+2026-05-21 20:03:00 | INFO     | app.reddit.reddit_browser:check_inbox:596 - Found 0 chat messages

@@ -60,21 +60,29 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 table { width: 100%; border-collapse: collapse; font-size: 12px; }
 th { text-align: left; padding: 10px 12px; background: var(--surface); color: var(--text-dim);
     font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px;
-    border-bottom: 1px solid var(--border); position: sticky; top: 0; }
-td { padding: 8px 12px; border-bottom: 1px solid #1a1a2a; }
+    border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1; }
+td { padding: 8px 12px; border-bottom: 1px solid #1a1a2a; vertical-align: middle; }
 tr:hover { background: rgba(99,102,241,0.05); }
 
 .table-wrap { background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; overflow: hidden; max-height: 500px; overflow-y: auto; }
+    border-radius: 12px; overflow: hidden; max-height: 550px; overflow-y: auto; }
 
-.btn { padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600;
+.btn { padding: 5px 10px; border-radius: 8px; font-size: 11px; font-weight: 600;
     cursor: pointer; border: 1px solid var(--border); transition: all 0.2s;
     background: var(--surface); color: var(--text); text-decoration: none; display: inline-block; }
 .btn:hover { border-color: var(--accent); background: rgba(99,102,241,0.1); }
 .btn-green { background: rgba(74,222,128,0.15); color: var(--green); border-color: rgba(74,222,128,0.3); }
 .btn-green:hover { background: rgba(74,222,128,0.25); }
 .btn-red { background: rgba(248,113,113,0.15); color: var(--red); border-color: rgba(248,113,113,0.3); }
+.btn-red:hover { background: rgba(248,113,113,0.25); }
 .btn-blue { background: rgba(96,165,250,0.15); color: var(--blue); border-color: rgba(96,165,250,0.3); }
+.btn-blue:hover { background: rgba(96,165,250,0.25); }
+.btn-purple { background: rgba(167,139,250,0.15); color: var(--accent2); border-color: rgba(167,139,250,0.3); }
+.btn-purple:hover { background: rgba(167,139,250,0.25); }
+.btn-yellow { background: rgba(250,204,21,0.15); color: var(--yellow); border-color: rgba(250,204,21,0.3); }
+.btn-yellow:hover { background: rgba(250,204,21,0.25); }
+
+.action-group { display: flex; gap: 4px; flex-wrap: wrap; }
 
 .log-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px;
     padding: 16px; max-height: 400px; overflow-y: auto; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
@@ -85,6 +93,11 @@ tr:hover { background: rgba(99,102,241,0.05); }
 
 .controls-bar { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
 
+.quality-bar { width: 50px; height: 6px; border-radius: 3px; background: #1a1a2e; display: inline-block; vertical-align: middle; margin-left: 6px; }
+.quality-fill { height: 100%; border-radius: 3px; }
+
+.detail-row { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+
 @media (max-width: 768px) {
     .container { padding: 12px; }
     .header { padding: 12px; }
@@ -93,49 +106,86 @@ tr:hover { background: rgba(99,102,241,0.05); }
 """
 
 
+def _escape(text: str) -> str:
+    """Escape HTML special characters."""
+    return (text or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
 def render_dashboard(
     leads: list[dict], stats: dict, conversations: list[dict],
     agent_running: bool, ollama_ok: bool, auto_send: bool,
     logs: list[dict], outreach_stats: dict,
 ) -> str:
     lead_rows = ""
-    for lead in leads[:60]:
+    for lead in leads[:80]:
         q = lead.get("lead_quality", 0)
-        qc = "var(--green)" if q >= 70 else "var(--yellow)" if q >= 40 else "var(--red)"
-        sb = {"new":"🆕","analyzed":"🔍","replied":"✅"}.get(lead.get("status",""), "⏳")
-        approve_btn = ""
-        if lead.get("status") == "analyzed" and not lead.get("approved") and q >= 70:
-            approve_btn = f'<a class="btn btn-green" href="/api/leads/{lead["id"]}/approve" style="font-size:10px">Approve</a>'
+        qc = "var(--green)" if q >= 60 else "var(--yellow)" if q >= 40 else "var(--red)"
+        status = lead.get("status", "")
+        sb = {"new": "🆕", "analyzed": "🔍", "replied": "✅"}.get(status, "⏳")
+        approved = lead.get("approved", 0)
+
+        # Build action buttons based on status
+        actions = []
+        if status == "analyzed" and not approved:
+            actions.append(f'<a class="btn btn-green" href="/api/leads/{lead["id"]}/approve">✓ Approve</a>')
+            actions.append(f'<a class="btn btn-blue" href="/api/leads/{lead["id"]}/dm">📨 DM Now</a>')
+        elif status == "analyzed" and approved:
+            actions.append(f'<a class="btn btn-blue" href="/api/leads/{lead["id"]}/dm">📨 DM Now</a>')
+            actions.append('<span style="color:var(--green);font-size:10px">✓ Approved</span>')
+        elif status == "replied":
+            actions.append(f'<a class="btn btn-yellow" href="/api/leads/{lead["id"]}/reinstate">🔄 Reinstate</a>')
+        elif status == "new":
+            actions.append('<span style="color:var(--text-dim);font-size:10px">⏳ Pending analysis</span>')
+
+        action_html = '<div class="action-group">' + ''.join(actions) + '</div>'
+
+        # Quality bar visual
+        bar_color = "#4ade80" if q >= 60 else "#facc15" if q >= 40 else "#f87171"
+        quality_html = f'<span style="color:{qc};font-weight:700">{q}</span><div class="quality-bar"><div class="quality-fill" style="width:{q}%;background:{bar_color}"></div></div>'
+
+        # Extra details row
+        biz = lead.get('business_intent', 'N/A')
+        hiring = lead.get('hiring_probability', 'N/A')
+        tech = lead.get('technical_complexity', 'N/A')
+        budget = lead.get('budget_estimate', 'N/A')
+        details = f'<div class="detail-row">💼 {_escape(str(biz))} · 🎯 Hiring: {_escape(str(hiring))} · 🔧 {_escape(str(tech))} · 💰 {_escape(str(budget))}</div>'
+
+        title_text = _escape(lead.get('title', ''))[:50]
+        username = _escape(lead.get('username', ''))
+        subreddit = _escape(lead.get('subreddit', ''))
+        urgency = _escape(lead.get('urgency', ''))
+        project = _escape(lead.get('project_type', ''))
+        post_url = lead.get('post_url', '#')
+
         lead_rows += f"""<tr>
             <td>{lead.get('id','')}</td>
-            <td><a href="{lead.get('post_url','#')}" target="_blank" style="color:var(--blue)">{lead.get('title','')[:45]}</a></td>
-            <td>u/{lead.get('username','')}</td>
-            <td>r/{lead.get('subreddit','')}</td>
-            <td><span style="color:{qc};font-weight:700">{q}</span></td>
-            <td>{lead.get('urgency','')}</td>
-            <td>{lead.get('project_type','')}</td>
-            <td>{lead.get('emotional_tone','')}</td>
-            <td>{sb} {lead.get('status','')}</td>
-            <td>{approve_btn}</td>
+            <td><a href="{post_url}" target="_blank" style="color:var(--blue)">{title_text}</a>{details}</td>
+            <td>u/{username}</td>
+            <td>r/{subreddit}</td>
+            <td>{quality_html}</td>
+            <td>{urgency}</td>
+            <td>{project}</td>
+            <td>{sb} {status}</td>
+            <td>{action_html}</td>
         </tr>"""
 
     conv_rows = ""
     for conv in conversations[:30]:
         conv_rows += f"""<tr>
             <td>{conv.get('id','')}</td>
-            <td>u/{conv.get('username','')}</td>
-            <td>{conv.get('project_details','')[:35]}</td>
+            <td>u/{_escape(conv.get('username',''))}</td>
+            <td>{_escape(conv.get('project_details',''))[:35]}</td>
             <td>{conv.get('budget','N/A')}</td>
             <td>{conv.get('negotiation_stage','')}</td>
             <td>{conv.get('status','')}</td>
             <td>{conv.get('last_message_at','N/A')}</td>
-            <td><a class="btn btn-blue" href="/api/conversations/{conv.get('id','')}/messages" target="_blank" style="font-size:10px">View</a></td>
+            <td><a class="btn btn-blue" href="/api/conversations/{conv.get('id','')}/messages" target="_blank">View</a></td>
         </tr>"""
 
     log_entries = ""
     for log in logs[-40:]:
         lc = {"OK":"log-ok","ERR":"log-err","WARN":"log-warn"}.get(log.get("level",""), "log-info")
-        log_entries += f'<div class="log-entry"><span class="log-time">{log.get("time","")}</span><span class="{lc}">{log.get("message","")}</span></div>'
+        log_entries += f'<div class="log-entry"><span class="log-time">{log.get("time","")}</span><span class="{lc}">{_escape(log.get("message",""))}</span></div>'
 
     total = sum(stats.values()) if stats else 0
     mode_badge = '<span class="badge badge-auto">Auto-Send</span>' if auto_send else '<span class="badge badge-manual">Manual</span>'
@@ -173,13 +223,13 @@ def render_dashboard(
         <div class="stat-card"><div class="number">{o_ok}/{o_total}</div><div class="label">Outreach OK</div></div>
     </div>
     <div class="tabs">
-        <div class="tab active" onclick="switchTab('leads')">📋 Leads</div>
-        <div class="tab" onclick="switchTab('conversations')">💬 Conversations</div>
+        <div class="tab active" onclick="switchTab('leads')">📋 Leads ({total})</div>
+        <div class="tab" onclick="switchTab('conversations')">💬 Conversations ({len(conversations)})</div>
         <div class="tab" onclick="switchTab('logs')">📜 Live Logs</div>
     </div>
     <div id="tab-leads" class="tab-content active"><div class="table-wrap"><table>
-        <thead><tr><th>ID</th><th>Title</th><th>User</th><th>Source</th><th>Quality</th><th>Urgency</th><th>Type</th><th>Emotion</th><th>Status</th><th>Action</th></tr></thead>
-        <tbody>{lead_rows or '<tr><td colspan="10" style="text-align:center;color:var(--text-muted);padding:40px">No leads yet — agent is scanning…</td></tr>'}</tbody>
+        <thead><tr><th>ID</th><th>Title & Details</th><th>User</th><th>Source</th><th>Quality</th><th>Urgency</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody>{lead_rows or '<tr><td colspan="9" style="text-align:center;color:var(--text-muted);padding:40px">No leads yet — agent is scanning…</td></tr>'}</tbody>
     </table></div></div>
     <div id="tab-conversations" class="tab-content"><div class="table-wrap"><table>
         <thead><tr><th>ID</th><th>User</th><th>Project</th><th>Budget</th><th>Stage</th><th>Status</th><th>Last Msg</th><th>View</th></tr></thead>

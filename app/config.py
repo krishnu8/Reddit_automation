@@ -107,7 +107,7 @@ class LogSettings(BaseSettings):
 
 class LeadSettings(BaseSettings):
     """Lead scoring configuration."""
-    min_lead_quality: int = Field(default=70, alias="MIN_LEAD_QUALITY")
+    min_lead_quality: int = Field(default=60, alias="MIN_LEAD_QUALITY")
 
     model_config = {"env_file": PROJECT_ROOT / ".env", "extra": "ignore"}
 
@@ -147,6 +147,19 @@ TARGET_SUBREDDITS: list[str] = [
 # ── Search keywords (direct, indirect, problem-based) ───────────
 
 SEARCH_KEYWORDS_DIRECT: list[str] = [
+    "automation",
+    "SEO",
+    "optimization",
+    "website development",
+    "fix bug",
+    "ui/ux",
+    "designer",
+    "dev",
+    "developer",
+    "freelancer",
+    "hourly paid dev",
+    "hiring",
+    "hirring",
     "hiring developer",
     "hiring web developer",
     "need website",

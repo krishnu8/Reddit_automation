@@ -4,7 +4,7 @@ FastAPI Dashboard for the Reddit AI Agent.
 Provides a web-based control panel with:
   - Lead overview & statistics
   - Conversation viewer
-  - Approval system
+  - Approval system with Approve / DM / Reinstate per lead
   - Auto-send toggle
   - Live logs
   - Agent pause/resume
@@ -99,6 +99,41 @@ async def resume_agent():
 async def approve_lead(lead_id: int):
     """Approve a lead for outreach."""
     await db.approve_lead(lead_id)
+    return RedirectResponse(url="/", status_code=303)
+
+
+@app.get("/api/leads/{lead_id}/dm")
+async def dm_lead_now(lead_id: int):
+    """Approve and immediately queue a DM to a lead."""
+    lead = await db.get_lead_by_id(lead_id)
+    if not lead:
+        raise HTTPException(status_code=404, detail="Lead not found")
+
+    # Mark as approved
+    await db.approve_lead(lead_id)
+
+    # Schedule the DM via the task manager in background
+    import asyncio
+    from app.reddit.messenger import dm_lead as _dm_lead
+
+    async def _send():
+        try:
+            success = await _dm_lead(lead, lead.get("ai_reply", ""))
+            task_manager.add_log(
+                "OK" if success else "ERR",
+                f"{'✅' if success else '❌'} Manual DM to u/{lead['username']}"
+            )
+        except Exception as exc:
+            task_manager.add_log("ERR", f"Manual DM failed: {exc}")
+
+    asyncio.create_task(_send())
+    return RedirectResponse(url="/", status_code=303)
+
+
+@app.get("/api/leads/{lead_id}/reinstate")
+async def reinstate_lead(lead_id: int):
+    """Reset a lead back to 'analyzed' so it can be re-approved/re-messaged."""
+    await db.reinstate_lead(lead_id)
     return RedirectResponse(url="/", status_code=303)
 
 

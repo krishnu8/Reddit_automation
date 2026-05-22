@@ -66,6 +66,12 @@ async def analyze_lead(lead: dict[str, Any]) -> dict[str, Any]:
             budget_estimate=result["budget_estimate"],
             emotional_tone=result["emotional_tone"],
             recommended_price=result["recommended_price"],
+            business_intent=result["business_intent"],
+            startup_intent=result["startup_intent"],
+            technical_complexity=result["technical_complexity"],
+            hiring_probability=result["hiring_probability"],
+            budget_likelihood=result["budget_likelihood"],
+            long_term_client_potential=result["long_term_client_potential"],
         )
 
         # Log raw AI response for audit
@@ -116,9 +122,9 @@ def _normalise_analysis(raw: dict[str, Any]) -> dict[str, Any]:
 
     # Determine action
     is_client = raw.get("is_potential_client", False)
-    if is_client and quality >= 70:
+    if is_client and quality >= 60:
         action = "dm"
-    elif quality >= 70:
+    elif quality >= 60:
         action = "dm"
     else:
         action = "skip"
@@ -144,6 +150,12 @@ def _normalise_analysis(raw: dict[str, Any]) -> dict[str, Any]:
         "recommended_price": str(raw.get("recommended_price", "")),
         "followup_strategy": str(raw.get("followup_strategy", "")),
         "reasoning": str(raw.get("reasoning", "")),
+        "business_intent": str(raw.get("business_intent", "unknown")),
+        "startup_intent": str(raw.get("startup_intent", "unknown")),
+        "technical_complexity": str(raw.get("technical_complexity", "unknown")),
+        "hiring_probability": str(raw.get("hiring_probability", "unknown")),
+        "budget_likelihood": str(raw.get("budget_likelihood", "unknown")),
+        "long_term_client_potential": str(raw.get("long_term_client_potential", "unknown")),
     }
 
 
@@ -160,4 +172,10 @@ def _default_analysis() -> dict[str, Any]:
         "recommended_price": "",
         "followup_strategy": "",
         "reasoning": "Analysis failed",
+        "business_intent": "unknown",
+        "startup_intent": "unknown",
+        "technical_complexity": "unknown",
+        "hiring_probability": "unknown",
+        "budget_likelihood": "unknown",
+        "long_term_client_potential": "unknown",
     }

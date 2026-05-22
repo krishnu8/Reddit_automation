@@ -42,6 +42,12 @@ CREATE TABLE IF NOT EXISTS leads (
     recommended_action  TEXT    NOT NULL DEFAULT 'none',
     recommended_price   TEXT    NOT NULL DEFAULT '',
     ai_reply            TEXT    NOT NULL DEFAULT '',
+    business_intent     TEXT    NOT NULL DEFAULT 'unknown',
+    startup_intent      TEXT    NOT NULL DEFAULT 'unknown',
+    technical_complexity TEXT   NOT NULL DEFAULT 'unknown',
+    hiring_probability  TEXT    NOT NULL DEFAULT 'unknown',
+    budget_likelihood   TEXT    NOT NULL DEFAULT 'unknown',
+    long_term_client_potential TEXT NOT NULL DEFAULT 'unknown',
     status              TEXT    NOT NULL DEFAULT 'new',
     scraped_at          TEXT    NOT NULL DEFAULT (datetime('now')),
     analyzed_at         TEXT,
@@ -152,6 +158,28 @@ class Database:
         self._conn = await aiosqlite.connect(str(self.db_path))
         self._conn.row_factory = aiosqlite.Row
         await self._conn.executescript(_SCHEMA)
+        
+        # Migration for existing DBs
+        try:
+            # Check if columns exist, if not, it will throw an error and we add them. 
+            # SQLite does not support IF NOT EXISTS in ALTER TABLE add column.
+            # We can just try adding them and catch the OperationalError.
+            columns_to_add = [
+                "business_intent TEXT NOT NULL DEFAULT 'unknown'",
+                "startup_intent TEXT NOT NULL DEFAULT 'unknown'",
+                "technical_complexity TEXT NOT NULL DEFAULT 'unknown'",
+                "hiring_probability TEXT NOT NULL DEFAULT 'unknown'",
+                "budget_likelihood TEXT NOT NULL DEFAULT 'unknown'",
+                "long_term_client_potential TEXT NOT NULL DEFAULT 'unknown'"
+            ]
+            for col in columns_to_add:
+                try:
+                    await self._conn.execute(f"ALTER TABLE leads ADD COLUMN {col}")
+                except aiosqlite.OperationalError:
+                    pass # Column likely already exists
+        except Exception as e:
+            logger.warning(f"Migration check failed: {e}")
+
         await self._conn.commit()
         logger.info("Database connected at {}", self.db_path)
 
@@ -207,6 +235,12 @@ class Database:
         budget_estimate: str = "unknown",
         emotional_tone: str = "neutral",
         recommended_price: str = "",
+        business_intent: str = "unknown",
+        startup_intent: str = "unknown",
+        technical_complexity: str = "unknown",
+        hiring_probability: str = "unknown",
+        budget_likelihood: str = "unknown",
+        long_term_client_potential: str = "unknown",
     ) -> None:
         """Store the AI analysis result for a lead."""
         now = datetime.now(timezone.utc).isoformat()
@@ -217,12 +251,17 @@ class Database:
                 recommended_action = ?, ai_reply = ?,
                 budget_estimate = ?, emotional_tone = ?,
                 recommended_price = ?,
+                business_intent = ?, startup_intent = ?,
+                technical_complexity = ?, hiring_probability = ?,
+                budget_likelihood = ?, long_term_client_potential = ?,
                 analyzed_at = ?, status = 'analyzed'
             WHERE id = ?
             """,
             (lead_quality, urgency, project_type, recommended_action,
              ai_reply, budget_estimate, emotional_tone,
-             recommended_price, now, lead_id),
+             recommended_price, business_intent, startup_intent,
+             technical_complexity, hiring_probability, budget_likelihood,
+             long_term_client_potential, now, lead_id),
         )
         await self.conn.commit()
 
@@ -250,6 +289,15 @@ class Database:
             (ai_reply, lead_id),
         )
         await self.conn.commit()
+
+    async def reinstate_lead(self, lead_id: int) -> None:
+        """Reset a lead back to 'analyzed' so it can be re-approved/re-messaged."""
+        await self.conn.execute(
+            "UPDATE leads SET status = 'analyzed', replied_at = NULL, approved = 0 WHERE id = ?",
+            (lead_id,),
+        )
+        await self.conn.commit()
+        logger.info("Reinstated lead #{} back to analyzed", lead_id)
 
     async def get_new_leads(self) -> list[dict[str, Any]]:
         """Return all leads with status 'new'."""
@@ -305,6 +353,12 @@ class Database:
         )
         rows = await cursor.fetchall()
         return {r["status"]: r["cnt"] for r in rows}
+
+    async def post_exists(self, post_url: str) -> bool:
+        """Check if a post URL is already in the database."""
+        cursor = await self.conn.execute("SELECT 1 FROM leads WHERE post_url = ?", (post_url,))
+        row = await cursor.fetchone()
+        return bool(row)
 
     # ── Conversation operations ─────────────────────────────────
 

@@ -32,7 +32,7 @@ Strong buying signals include: Budget/Timeline mention, Business use-case, Start
 You MUST respond with valid JSON only — no extra text, no markdown fences."""
 
 LEAD_ANALYSIS_PROMPT = """Analyze this Reddit post as a potential freelance lead.
-
+    
 **Source:** r/{subreddit}
 **Title:** {title}
 **Body:** {body}
@@ -44,6 +44,12 @@ Evaluate the lead and return ONLY this exact JSON format:
   "service_type": "website/uiux/seo/automation/webapp/dashboard/ecommerce/saas/landing_page/api_integration/other",
   "lead_score": <integer 1-10>,
   "urgency": "low/medium/high",
+  "business_intent": "low/medium/high",
+  "startup_intent": "low/medium/high",
+  "technical_complexity": "low/medium/high",
+  "hiring_probability": "low/medium/high",
+  "budget_likelihood": "low/medium/high",
+  "long_term_client_potential": "low/medium/high",
   "budget_estimate": "low/medium/high/unknown",
   "emotional_tone": "frustrated/urgent/confused/overwhelmed/neutral/excited/cautious",
   "reasoning": "<short explanation of why they are or aren't a good lead>",

@@ -23,6 +23,9 @@ _MAX_RETRIES = 3
 _RETRY_DELAY = 2  # seconds
 _REQUEST_TIMEOUT = 180  # seconds (local models can be slow)
 
+# Global lock to prevent concurrent Ollama requests which can cause 500 errors
+_ollama_lock = asyncio.Lock()
+
 
 async def _post(
     model: str,
@@ -53,21 +56,29 @@ async def _post(
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
             async with aiohttp.ClientSession() as session:
-                async with session.post(
-                    ollama_cfg.ollama_url,
-                    json=payload,
-                    timeout=aiohttp.ClientTimeout(total=timeout),
-                ) as resp:
-                    resp.raise_for_status()
-                    data = await resp.json()
-                    text: str = data.get("response", "")
-                    logger.debug(
-                        "Ollama [{} | attempt {}] → {} chars",
-                        model,
-                        attempt,
-                        len(text),
-                    )
-                    return text.strip()
+                async with _ollama_lock:
+                    async with session.post(
+                        ollama_cfg.ollama_url,
+                        json=payload,
+                        timeout=aiohttp.ClientTimeout(total=timeout),
+                    ) as resp:
+                        if resp.status != 200:
+                            err_text = await resp.text()
+                            raise aiohttp.ClientResponseError(
+                                resp.request_info,
+                                resp.history,
+                                status=resp.status,
+                                message=f"Ollama returned {resp.status}: {err_text}"
+                            )
+                        data = await resp.json()
+                        text: str = data.get("response", "")
+                        logger.debug(
+                            "Ollama [{} | attempt {}] → {} chars",
+                            model,
+                            attempt,
+                            len(text),
+                        )
+                        return text.strip()
         except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
             last_error = exc
             logger.warning(
